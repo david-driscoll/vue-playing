@@ -22,5 +22,8 @@
         "strictFunctionTypes": true,
         "strictNullChecks": true,
         "stripInternal": true
+    },
+    "typeAcquisition": {
+        "enable": true
     }
 }
