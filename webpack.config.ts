@@ -5,6 +5,7 @@ module.exports = <webpack.Configuration> {
         'main': './client/app.ts',
         'server': './client/server.ts',
     },
+    target: "node",
     output: {
         filename: "./dist/[name].js",
         //chunkFilename: "[chunkhash].js",
@@ -50,7 +51,6 @@ module.exports = <webpack.Configuration> {
 
     },
     devtool: "source-map",
-    target: "node",
     stats: {
         colors: true,
         // assets: true,
