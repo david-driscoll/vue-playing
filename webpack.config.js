@@ -1,12 +1,13 @@
-import * as webpack from 'webpack';
+var webpack = require('webpack');
 
-module.exports = <webpack.Configuration>{
+module.exports = {
     entry: {
-        'main': './src/app.ts',
+        'main': './client/app.ts',
     },
     output: {
-        filename: "[name].js",
+        filename: "./dist/[name].js",
         //chunkFilename: "[chunkhash].js",
+        publicPath: './dist/',
         pathinfo: true,
     },
     module: {
@@ -39,6 +40,7 @@ module.exports = <webpack.Configuration>{
             }
         ],
     },
+    plugins: [],
     resolve: {
         extensions: ['.ts', '.tsx', '.vue', '.js', '.jsx', '.json', '.css', '.scss']
     },
