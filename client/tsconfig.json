@@ -31,6 +31,6 @@
         "enable": true
     },
     "include": [
-        "webpack.*.ts"
+        "./**/*"
     ]
 }

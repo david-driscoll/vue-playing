@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -42,7 +43,8 @@ namespace server
                 app.UseDeveloperExceptionPage();
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
-                    ProjectPath = "../"
+                    ProjectPath = Path.GetFullPath(Path.Combine(env.ContentRootPath, "..")),
+                    ConfigFile = "webpack.config.ts",
                     // ConfigFile = "../webpack.config.ts",
                     // HotModuleReplacement = true,
                     // EnvironmentVariables = new Dictionary<string, string>() {

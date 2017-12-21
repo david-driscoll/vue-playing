@@ -1,6 +1,6 @@
-var webpack = require('webpack');
+import * as webpack from 'webpack';
 
-module.exports = {
+module.exports = <webpack.Configuration> {
     entry: {
         'main': './client/app.ts',
     },

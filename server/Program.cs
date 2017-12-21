@@ -19,6 +19,7 @@ namespace server
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureLogging(c => c.SetMinimumLevel(LogLevel.Trace))
                 .UseStartup<Startup>()
                 .Build();
     }
