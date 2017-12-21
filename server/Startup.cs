@@ -44,7 +44,7 @@ namespace server
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
                     ProjectPath = Path.GetFullPath(Path.Combine(env.ContentRootPath, "..")),
-                    ConfigFile = "webpack.config.ts",
+                    ConfigFile = "webpack.aspnet.js",
                     // ConfigFile = "../webpack.config.ts",
                     // HotModuleReplacement = true,
                     // EnvironmentVariables = new Dictionary<string, string>() {

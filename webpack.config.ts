@@ -3,6 +3,7 @@ import * as webpack from 'webpack';
 module.exports = <webpack.Configuration> {
     entry: {
         'main': './client/app.ts',
+        'server': './client/server.ts',
     },
     output: {
         filename: "./dist/[name].js",
@@ -49,7 +50,7 @@ module.exports = <webpack.Configuration> {
 
     },
     devtool: "source-map",
-    target: "web",
+    target: "node",
     stats: {
         colors: true,
         // assets: true,
