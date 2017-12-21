@@ -1,9 +1,13 @@
 import * as webpack from 'webpack';
-export const entry = 'abcd';
 
-export const module: webpack.NewModule = {
-    rules: [{
-    test: /\.ts$/,
-    use: 'ts-loader'
-    }]
-};
+module.exports = <webpack.Configuration>{
+
+    module: {
+        rules: [{
+            test: /\.tsx?$/,
+            exclude: /node_modules/,
+            use: 'ts-loader'
+        }],
+    },
+}
+export const entry = 'abcd';
