@@ -1,11 +1,11 @@
 import * as webpack from 'webpack';
 
 module.exports = <webpack.Configuration> {
-    entry: {
-        'main': './client/app.ts',
-        'server': './client/server.ts',
-    },
-    target: "node",
+    // entry: {
+    //     'main': './client/app.ts',
+    //     'server': './client/server.ts',
+    // },
+    target: "web",
     output: {
         filename: "./dist/[name].js",
         //chunkFilename: "[chunkhash].js",

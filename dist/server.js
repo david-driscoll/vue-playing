@@ -1,4 +1,4 @@
-/******/ (function(modules) { // webpackBootstrap
+(function(e, a) { for(var i in a) e[i] = a[i]; }(exports, /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "./dist/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 12);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -75,18 +75,7 @@
 module.exports = require("domain");
 
 /***/ }),
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */
+/* 1 */
 /*!**************************!*\
   !*** ./client/server.ts ***!
   \**************************/
@@ -97,9 +86,9 @@ module.exports = require("domain");
 "use strict";
 
 exports.__esModule = true;
-var tslib_1 = __webpack_require__(/*! tslib */ 13);
-var aspnet_prerendering_1 = __webpack_require__(/*! aspnet-prerendering */ 14);
-module.exports = aspnet_prerendering_1.createServerRenderer(function (params) {
+var tslib_1 = __webpack_require__(/*! tslib */ 2);
+var aspnet_prerendering_1 = __webpack_require__(/*! aspnet-prerendering */ 3);
+exports["default"] = aspnet_prerendering_1.createServerRenderer(function (params) {
     return tslib_1.__awaiter(this, void 0, void 0, function () {
         var result;
         return tslib_1.__generator(this, function (_a) {
@@ -114,7 +103,7 @@ module.exports = aspnet_prerendering_1.createServerRenderer(function (params) {
 
 
 /***/ }),
-/* 13 */
+/* 2 */
 /*!*****************************************!*\
   !*** ./node_modules/tslib/tslib.es6.js ***!
   \*****************************************/
@@ -310,7 +299,7 @@ function __makeTemplateObject(cooked, raw) {
 
 
 /***/ }),
-/* 14 */
+/* 3 */
 /*!***************************************************!*\
   !*** ./node_modules/aspnet-prerendering/index.js ***!
   \***************************************************/
@@ -324,11 +313,11 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(/*! ./Prerendering */ 15));
+__export(__webpack_require__(/*! ./Prerendering */ 4));
 
 
 /***/ }),
-/* 15 */
+/* 4 */
 /*!**********************************************************!*\
   !*** ./node_modules/aspnet-prerendering/Prerendering.js ***!
   \**********************************************************/
@@ -339,9 +328,9 @@ __export(__webpack_require__(/*! ./Prerendering */ 15));
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var url = __webpack_require__(/*! url */ 16);
+var url = __webpack_require__(/*! url */ 5);
 var domain = __webpack_require__(/*! domain */ 0);
-var main_1 = __webpack_require__(/*! domain-task/main */ 17);
+var main_1 = __webpack_require__(/*! domain-task/main */ 6);
 var defaultTimeoutMilliseconds = 30 * 1000;
 function createServerRenderer(bootFunc) {
     var resultFunc = function (callback, applicationBasePath, bootModule, absoluteRequestUrl, requestPathAndQuery, customDataParameter, overrideTimeoutMilliseconds, requestPathBase) {
@@ -437,7 +426,7 @@ function bindPromiseContinuationsToDomain(promise, domainInstance) {
 
 
 /***/ }),
-/* 16 */
+/* 5 */
 /*!**********************!*\
   !*** external "url" ***!
   \**********************/
@@ -448,7 +437,7 @@ function bindPromiseContinuationsToDomain(promise, domainInstance) {
 module.exports = require("url");
 
 /***/ }),
-/* 17 */
+/* 6 */
 /*!******************************************!*\
   !*** ./node_modules/domain-task/main.js ***!
   \******************************************/
@@ -460,7 +449,7 @@ module.exports = require("url");
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var domain = __webpack_require__(/*! domain */ 0);
-var domainContext = __webpack_require__(/*! domain-context */ 18);
+var domainContext = __webpack_require__(/*! domain-context */ 7);
 // Not using symbols, because this may need to run in a version of Node.js that doesn't support them
 var domainTasksStateKey = '__DOMAIN_TASKS';
 var domainTaskBaseUrlStateKey = '__DOMAIN_TASK_INTERNAL_FETCH_BASEURL__DO_NOT_REFERENCE_THIS__';
@@ -535,7 +524,7 @@ exports.baseUrl = baseUrl;
 
 
 /***/ }),
-/* 18 */
+/* 7 */
 /*!**************************************************!*\
   !*** ./node_modules/domain-context/lib/index.js ***!
   \**************************************************/
@@ -695,5 +684,5 @@ exports.middlewareOnError = function(onError) {
 
 
 /***/ })
-/******/ ]);
+/******/ ])));
 //# sourceMappingURL=server.js.map

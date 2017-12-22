@@ -43,6 +43,7 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "node-sass": "^4.7.2",
     "vue-class-component": "^6.1.2",
     "vue-property-decorator": "^6.0.0",
