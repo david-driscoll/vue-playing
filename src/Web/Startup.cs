@@ -14,9 +14,12 @@ namespace server
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly IHostingEnvironment _environment;
+
+        public Startup(IConfiguration configuration, IHostingEnvironment environment)
         {
             Configuration = configuration;
+            _environment = environment;
         }
 
         public IConfiguration Configuration { get; }
@@ -27,21 +30,23 @@ namespace server
             services.AddMvc();
             services.AddNodeServices(c =>
             {
-                c.ProjectPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "..\\"));
+                if (_environment.IsDevelopment())
+                {
+                    c.ProjectPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "..", ".."));
+                }
             });
             // services.AddSpaPrerenderer();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory factory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            factory.CreateLogger("ABCD").LogCritical(Environment.GetEnvironmentVariable("TS_NODE_CACHE_DIRECTORY"));
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
-                    ProjectPath = Path.GetFullPath(Path.Combine(env.ContentRootPath, "..")),
+                    ProjectPath = Path.GetFullPath(Path.Combine(env.ContentRootPath, "..", "..")),
                     ConfigFile = "webpack.aspnet.js",
                     HotModuleReplacement = true,
                 });

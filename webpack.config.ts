@@ -7,10 +7,10 @@ const server = merge(
     <webpack.Configuration>{
         target: "node",
         entry: {
-            'server': './client/server.ts',
+            'prerenderer': './src/Client/server.ts',
         },
         output: {
-            publicPath: './dist/',
+            publicPath: './src/Web/prerenderer',
             libraryTarget: 'commonjs',
         }
     }
@@ -21,10 +21,10 @@ const client = merge(
     <webpack.Configuration>{
         target: "web",
         entry: {
-            'main': './client/app.ts',
+            'app': './src/Client/app.ts',
         },
         output: {
-            publicPath: './dist/',
+            publicPath: './src/Web/wwwroot/js/',
         }
     }
 );
