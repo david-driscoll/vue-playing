@@ -1,7 +1,7 @@
 import * as webpack from 'webpack';
-import * as FriendlyErrorsPlugin from 'friendly-errors-webpack-plugin';
+var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
-module.exports = <webpack.Configuration> {
+module.exports = <webpack.Configuration>{
     output: {
         pathinfo: true,
     },
