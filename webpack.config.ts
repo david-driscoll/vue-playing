@@ -10,19 +10,23 @@ const server = merge(
             'server': './client/server.ts',
         },
         output: {
-            libraryTarget: 'commonjs'
+            publicPath: './dist/server/',
+            libraryTarget: 'commonjs',
         }
     }
 );
 
 const client = merge(
     cloneDeep(config),
-    {
+    <webpack.Configuration>{
         target: "web",
         entry: {
             'main': './client/app.ts',
         },
+        output: {
+            publicPath: './dist/app/',
+        }
     }
 );
 
-module.exports = [server, client];
+module.exports = [client, server];

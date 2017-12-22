@@ -27,11 +27,9 @@ namespace server
             services.AddMvc();
             services.AddNodeServices(c =>
             {
-                c.EnvironmentVariables = new Dictionary<string, string>() {
-                    { "TS_NODE_CACHE_DIRECTORY", Environment.GetEnvironmentVariable("TS_NODE_CACHE_DIRECTORY") }
-                };
+                c.ProjectPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "..\\"));
             });
-            services.AddSpaPrerenderer();
+            // services.AddSpaPrerenderer();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,11 +43,7 @@ namespace server
                 {
                     ProjectPath = Path.GetFullPath(Path.Combine(env.ContentRootPath, "..")),
                     ConfigFile = "webpack.aspnet.js",
-                    // ConfigFile = "../webpack.config.ts",
-                    // HotModuleReplacement = true,
-                    // EnvironmentVariables = new Dictionary<string, string>() {
-                    //     { "TS_NODE_CACHE_DIRECTORY", Environment.GetEnvironmentVariable("TS_NODE_CACHE_DIRECTORY") }
-                    // }
+                    HotModuleReplacement = true,
                 });
             }
             else
