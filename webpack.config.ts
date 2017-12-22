@@ -10,7 +10,7 @@ const server = merge(
             'server': './client/server.ts',
         },
         output: {
-            publicPath: './dist/server/',
+            publicPath: './dist/',
             libraryTarget: 'commonjs',
         }
     }
@@ -24,7 +24,7 @@ const client = merge(
             'main': './client/app.ts',
         },
         output: {
-            publicPath: './dist/app/',
+            publicPath: './dist/',
         }
     }
 );
