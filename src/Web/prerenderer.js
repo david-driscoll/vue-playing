@@ -12238,29 +12238,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_aspnet_prerendering__ = __webpack_require__(/*! aspnet-prerendering */ 18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_aspnet_prerendering___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_aspnet_prerendering__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app__ = __webpack_require__(/*! ./app */ 23);
+var _this = this;
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_1_aspnet_prerendering__["createServerRenderer"])(function (params) {
-    return __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __awaiter */](this, void 0, void 0, function () {
-        var renderer, app, html;
-        return __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __generator */](this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    renderer = __webpack_require__(/*! vue-server-renderer */ 32).createRenderer();
-                    app = Object(__WEBPACK_IMPORTED_MODULE_2__app__["a" /* createApp */])().app;
-                    return [4 /*yield*/, renderer.renderToString(app)];
-                case 1:
-                    html = _a.sent();
-                    // var result = '<h1>Hello world!</h1>'
-                    //     + '<p>Current time in Node is: ' + new Date() + '</p>'
-                    //     + '<p>Request path is: ' + params.location.path + '</p>'
-                    //     + '<p>Absolute URL is: ' + params.absoluteUrl + '</p>';
-                    return [2 /*return*/, ({ html: html })];
-            }
-        });
+/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_1_aspnet_prerendering__["createServerRenderer"])(function (params) { return __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __awaiter */](_this, void 0, void 0, function () {
+    var renderer, app, html;
+    return __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __generator */](this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                renderer = __webpack_require__(/*! vue-server-renderer */ 32).createRenderer();
+                app = Object(__WEBPACK_IMPORTED_MODULE_2__app__["a" /* createApp */])().app;
+                return [4 /*yield*/, renderer.renderToString(app)];
+            case 1:
+                html = _a.sent();
+                // var result = '<h1>Hello world!</h1>'
+                //     + '<p>Current time in Node is: ' + new Date() + '</p>'
+                //     + '<p>Request path is: ' + params.location.path + '</p>'
+                //     + '<p>Absolute URL is: ' + params.absoluteUrl + '</p>';
+                return [2 /*return*/, ({ html: html })];
+        }
     });
-}));
+}); }));
 
 
 /***/ }),
@@ -12889,10 +12888,10 @@ function createApp() {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ts_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Component_vue__ = __webpack_require__(/*! !ts-loader!../../node_modules/vue-loader/lib/selector?type=script&index=0&bustCache!./Component.vue */ 7);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1efd989c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Component_vue__ = __webpack_require__(/*! !../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-1efd989c","hasScoped":false,"buble":{"transforms":{}}}!../../node_modules/vue-loader/lib/selector?type=template&index=0&bustCache!./Component.vue */ 31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1efd989c_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Component_vue__ = __webpack_require__(/*! !../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-1efd989c","hasScoped":true,"buble":{"transforms":{}}}!../../node_modules/vue-loader/lib/selector?type=template&index=0&bustCache!./Component.vue */ 55);
 function injectStyle (ssrContext) {
 var i
-;(i=__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-1efd989c","scoped":false,"hasInlineConfig":false}!sass-loader!../../node_modules/vue-loader/lib/selector?type=styles&index=0&bustCache!./Component.vue */ 25),i.__inject__&&i.__inject__(ssrContext),i)
+;(i=__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-1efd989c","scoped":true,"hasInlineConfig":false}!sass-loader!../../node_modules/vue-loader/lib/selector?type=styles&index=0&bustCache!./Component.vue */ 53),i.__inject__&&i.__inject__(ssrContext),i)
 }
 var normalizeComponent = __webpack_require__(/*! ../../node_modules/vue-loader/lib/component-normalizer */ 30)
 /* script */
@@ -12905,12 +12904,12 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-1efd989c"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = "73a2c503"
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__ts_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Component_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1efd989c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Component_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1efd989c_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Component_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -12922,46 +12921,8 @@ Component.options.__file = "src\\Client\\Component.vue"
 
 
 /***/ }),
-/* 25 */
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-style-loader!./node_modules/css-loader?sourceMap!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-1efd989c","scoped":false,"hasInlineConfig":false}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./src/Client/Component.vue ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(/*! !../../node_modules/css-loader?sourceMap!../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-1efd989c","scoped":false,"hasInlineConfig":false}!../../node_modules/sass-loader/lib/loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Component.vue */ 26);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to SSR context
-var add = __webpack_require__(/*! ../../node_modules/vue-style-loader/lib/addStylesServer.js */ 28)
-module.exports.__inject__ = function (context) {
-  add("6ed426d8", content, false, context)
-};
-
-/***/ }),
-/* 26 */
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader?sourceMap!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-1efd989c","scoped":false,"hasInlineConfig":false}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./src/Client/Component.vue ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ 27)(true);
-// imports
-
-
-// module
-exports.push([module.i, "", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Component.vue","sourceRoot":""}]);
-
-// exports
-
-
-/***/ }),
+/* 25 */,
+/* 26 */,
 /* 27 */
 /*!*************************************************!*\
   !*** ./node_modules/css-loader/lib/css-base.js ***!
@@ -13292,27 +13253,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 31 */
-/*!*********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-1efd989c","hasScoped":false,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0&bustCache!./src/Client/Component.vue ***!
-  \*********************************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [_vm._ssrNode("Hello World does work... @#!@#")])
-}
-var staticRenderFns = []
-render._withStripped = true
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
-/***/ }),
+/* 31 */,
 /* 32 */
 /*!***************************************************!*\
   !*** ./node_modules/vue-server-renderer/index.js ***!
@@ -26169,6 +26110,67 @@ SourceNode.prototype.toStringWithSourceMap = function SourceNode_toStringWithSou
 
 exports.SourceNode = SourceNode;
 
+
+/***/ }),
+/* 53 */
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader!./node_modules/css-loader?sourceMap!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-1efd989c","scoped":true,"hasInlineConfig":false}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./src/Client/Component.vue ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../node_modules/css-loader?sourceMap!../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-1efd989c","scoped":true,"hasInlineConfig":false}!../../node_modules/sass-loader/lib/loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Component.vue */ 54);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add CSS to SSR context
+var add = __webpack_require__(/*! ../../node_modules/vue-style-loader/lib/addStylesServer.js */ 28)
+module.exports.__inject__ = function (context) {
+  add("6172be05", content, false, context)
+};
+
+/***/ }),
+/* 54 */
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader?sourceMap!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-1efd989c","scoped":true,"hasInlineConfig":false}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./src/Client/Component.vue ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ 27)(true);
+// imports
+
+
+// module
+exports.push([module.i, "", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Component.vue","sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 55 */
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-1efd989c","hasScoped":true,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0&bustCache!./src/Client/Component.vue ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._ssrNode("Hello World does work... hello !@#$!@#$")])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ })
 /******/ ])));

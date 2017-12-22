@@ -1,7 +1,7 @@
 import * as webpack from 'webpack';
-var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+var FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
 
-module.exports = <webpack.Configuration>{
+module.exports = {
     output: {
         pathinfo: true,
     },
@@ -12,7 +12,7 @@ module.exports = <webpack.Configuration>{
                 loader: 'vue-loader',
                 options: {
                     preloaders: {
-                        js: 'tslint-loader',
+                        js: "tslint-loader",
                         ts: 'tslint-loader',
                     },
                     loaders: {
@@ -39,10 +39,10 @@ module.exports = <webpack.Configuration>{
         new FriendlyErrorsPlugin()
     ],
     resolve: {
-        extensions: ['.ts', '.tsx', '.vue', '.js', '.jsx', '.json', '.css', '.scss']
+        extensions: ['.ts', '.tsx', ".vue", ".js", ".jsx", ".json", ".css", ".scss"]
     },
     performance: {
-        hints: 'warning',
+        hints: "warning",
 
     },
     devtool: "source-map",
@@ -74,4 +74,4 @@ module.exports = <webpack.Configuration>{
     // profile: true,
     // cache: true,
 
-}
+} as webpack.Configuration

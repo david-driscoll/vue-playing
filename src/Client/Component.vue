@@ -4,10 +4,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 </style>
 
 <template>
-    <div>Hello World does work... @#!@#</div>
+    <div>Hello World does work... hello !@#$!@#$</div>
 </template>
