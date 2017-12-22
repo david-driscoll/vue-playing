@@ -12540,11 +12540,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Development\\ReadySelect\\vue\\vue-playing\\server\\server.csproj",
-      "projectName": "server",
-      "projectPath": "D:\\Development\\ReadySelect\\vue\\vue-playing\\server\\server.csproj",
+      "projectUniqueName": "D:\\Development\\ReadySelect\\vue\\vue-playing\\src\\Web\\Web.csproj",
+      "projectName": "Web",
+      "projectPath": "D:\\Development\\ReadySelect\\vue\\vue-playing\\src\\Web\\Web.csproj",
       "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
-      "outputPath": "D:\\Development\\ReadySelect\\vue\\vue-playing\\server\\obj\\",
+      "outputPath": "D:\\Development\\ReadySelect\\vue\\vue-playing\\src\\Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

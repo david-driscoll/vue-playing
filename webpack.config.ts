@@ -10,8 +10,14 @@ const server = merge(
             'prerenderer': './src/Client/server.ts',
         },
         output: {
-            publicPath: './src/Web/prerenderer',
+            filename: './src/Web/[name].js',
+            // publicPath: './src/Web/prerenderer',
             libraryTarget: 'commonjs',
+        },
+        resolve: {
+            alias: {
+                // 'vue': 'vue/dist/vue.esm.js',
+            }
         }
     }
 );
@@ -21,10 +27,16 @@ const client = merge(
     <webpack.Configuration>{
         target: "web",
         entry: {
-            'app': './src/Client/app.ts',
+            'client': './src/Client/client.ts',
         },
         output: {
-            publicPath: './src/Web/wwwroot/js/',
+            filename: './src/Web/wwwroot/js/[name].js',
+            publicPath: '/js/',
+        },
+        resolve: {
+            alias: {
+                'vue': 'vue/dist/vue.esm.browser.js',
+            }
         }
     }
 );

@@ -1,15 +1,12 @@
 import { createServerRenderer } from 'aspnet-prerendering';
 import Vue from 'vue';
+import { createApp } from './app';
 
 export default createServerRenderer(async function (params) {
-    // Step 1: Create a Vue instance
-    const app = new Vue({
-        template: `<div>Hello World 12312312</div>`
-    });
-
     // Step 2: Create a renderer
     const renderer = require('vue-server-renderer').createRenderer();
 
+    const { app } = createApp();
     // in 2.5.0+, returns a Promise if no callback is passed:
     const html = await renderer.renderToString(app);
     // var result = '<h1>Hello world!</h1>'

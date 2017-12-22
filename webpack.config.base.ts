@@ -1,10 +1,8 @@
 import * as webpack from 'webpack';
+import * as FriendlyErrorsPlugin from 'friendly-errors-webpack-plugin';
 
 module.exports = <webpack.Configuration> {
     output: {
-        filename: "./dist/[name].js",
-        //chunkFilename: "[chunkhash].js",
-        publicPath: './dist/',
         pathinfo: true,
     },
     module: {
@@ -14,11 +12,11 @@ module.exports = <webpack.Configuration> {
                 loader: 'vue-loader',
                 options: {
                     preloaders: {
-                        // js: 'tslint-loader',
+                        js: 'tslint-loader',
                         ts: 'tslint-loader',
                     },
                     loaders: {
-                        // js: 'ts-loader',
+                        js: 'ts-loader',
                         ts: 'ts-loader',
                     }
                 }
@@ -37,7 +35,9 @@ module.exports = <webpack.Configuration> {
             }
         ],
     },
-    plugins: [],
+    plugins: [
+        new FriendlyErrorsPlugin()
+    ],
     resolve: {
         extensions: ['.ts', '.tsx', '.vue', '.js', '.jsx', '.json', '.css', '.scss']
     },

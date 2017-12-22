@@ -9,5 +9,5 @@ export default {
 </style>
 
 <template>
-
+    <div>Hello World does work... updates in real time!!@#!@#!!@#!@#</div>
 </template>
