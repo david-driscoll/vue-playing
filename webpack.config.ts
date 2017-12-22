@@ -1,44 +1,44 @@
+import { cloneDeep, merge } from "lodash";
 import * as webpack from "webpack";
-import * as config from './webpack.config.base';
-import { cloneDeep, merge } from 'lodash';
+import * as config from "./webpack.config.base";
 
 const server = merge(
     cloneDeep(config),
-    <webpack.Configuration>{
+    {
         target: "node",
         entry: {
-            'prerenderer': './src/Client/server.ts',
+            prerenderer: "./src/Client/server.ts",
         },
         output: {
-            filename: './src/Web/[name].js',
+            filename: "./src/Web/[name].js",
             // publicPath: './src/Web/prerenderer',
-            libraryTarget: 'commonjs',
+            libraryTarget: "commonjs",
         },
         resolve: {
             alias: {
-                // 'vue': 'vue/dist/vue.esm.js',
-            }
-        }
-    }
+                vue: "vue/dist/vue.esm.js",
+            },
+        },
+    } as webpack.Configuration,
 );
 
 const client = merge(
     cloneDeep(config),
-    <webpack.Configuration>{
+    {
         target: "web",
         entry: {
-            'client': './src/Client/client.ts',
+            client: "./src/Client/client.ts",
         },
         output: {
-            filename: './src/Web/wwwroot/js/[name].js',
-            publicPath: '/js/',
+            filename: "./src/Web/wwwroot/js/[name].js",
+            publicPath: "/js/",
         },
         resolve: {
             alias: {
-                'vue': 'vue/dist/vue.esm.browser.js',
-            }
-        }
-    }
+                vue: "vue/dist/vue.esm.browser.js",
+            },
+        },
+    } as webpack.Configuration,
 );
 
 module.exports = [client, server];

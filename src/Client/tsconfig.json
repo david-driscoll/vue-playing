@@ -1,31 +1,12 @@
 {
+    "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "strict": true,
-        "diagnostics": true,
-        "downlevelIteration": true,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "forceConsistentCasingInFileNames": true,
-        "importHelpers": true,
         "lib": [
             "es2017"
         ],
         "target": "es3",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "noFallthroughCasesInSwitch": true,
-        "noImplicitAny": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "preserveConstEnums": true,
-        "strictFunctionTypes": true,
-        "strictNullChecks": true,
-        "stripInternal": true,
-        "plugins": [
-            {
-                "name": "tslint-language-service"
-            }
-        ]
+        "module": "es2015",
+        "moduleResolution": "node"
     },
     "typeAcquisition": {
         "enable": true
