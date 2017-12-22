@@ -9,37 +9,40 @@ module.exports = {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader',
+                loader: "vue-loader",
                 options: {
                     preloaders: {
                         js: "tslint-loader",
-                        ts: 'tslint-loader',
+                        ts: "tslint-loader",
                     },
                     loaders: {
-                        js: 'ts-loader',
-                        ts: 'ts-loader',
-                    }
-                }
+                        js: "ts-loader",
+                        ts: "ts-loader",
+                    },
+                },
             },
             {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
-                use: [{
-                    loader: 'ts-loader',
-                    options: {
-                        appendTsSuffixTo: [/\.vue$/]
+                use: [
+                    {
+                        loader: "ts-loader",
+                        options: {
+                            appendTsSuffixTo: [/\.vue$/],
+                        },
+                    },
+                    {
+                        loader: "tslint-loader",
                     }
-                }, {
-                    loader: 'tslint-loader'
-                }]
-            }
+                ],
+            },
         ],
     },
     plugins: [
-        new FriendlyErrorsPlugin()
+        new FriendlyErrorsPlugin(),
     ],
     resolve: {
-        extensions: ['.ts', '.tsx', ".vue", ".js", ".jsx", ".json", ".css", ".scss"]
+        extensions: [".ts", ".tsx", ".vue", ".js", ".jsx", ".json", ".css", ".scss"],
     },
     performance: {
         hints: "warning",
@@ -74,4 +77,4 @@ module.exports = {
     // profile: true,
     // cache: true,
 
-} as webpack.Configuration
+} as webpack.Configuration;

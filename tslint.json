@@ -1,9 +1,14 @@
 {
-    "defaultSeverity": "error",
+    "defaultSeverity": "warning",
     "extends": [
         "tslint:recommended"
     ],
     "jsRules": {},
-    "rules": {},
-    "rulesDirectory": []
+    "rules": {
+        "adjacent-overload-signatures": [true],
+        "match-default-export-name": [true]
+    },
+    "rulesDirectory": [
+        "./node_modules/tslint-microsoft-contrib"
+    ]
 }

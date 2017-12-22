@@ -1,0 +1,18 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "lib": [
+            "es2017"
+        ],
+        "target": "es3",
+        "module": "es2015",
+        "moduleResolution": "node"
+    },
+    "typeAcquisition": {
+        "enable": true
+    },
+    "include": [
+        "./**/*",
+        "./../../src/Client/**/*"
+    ]
+}

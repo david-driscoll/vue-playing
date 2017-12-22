@@ -12888,10 +12888,10 @@ function createApp() {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ts_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Component_vue__ = __webpack_require__(/*! !ts-loader!../../node_modules/vue-loader/lib/selector?type=script&index=0&bustCache!./Component.vue */ 7);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1efd989c_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Component_vue__ = __webpack_require__(/*! !../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-1efd989c","hasScoped":true,"buble":{"transforms":{}}}!../../node_modules/vue-loader/lib/selector?type=template&index=0&bustCache!./Component.vue */ 55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1efd989c_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Component_vue__ = __webpack_require__(/*! !../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-1efd989c","hasScoped":true,"buble":{"transforms":{}}}!../../node_modules/vue-loader/lib/selector?type=template&index=0&bustCache!./Component.vue */ 31);
 function injectStyle (ssrContext) {
 var i
-;(i=__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-1efd989c","scoped":true,"hasInlineConfig":false}!sass-loader!../../node_modules/vue-loader/lib/selector?type=styles&index=0&bustCache!./Component.vue */ 53),i.__inject__&&i.__inject__(ssrContext),i)
+;(i=__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-1efd989c","scoped":true,"hasInlineConfig":false}!sass-loader!../../node_modules/vue-loader/lib/selector?type=styles&index=0&bustCache!./Component.vue */ 25),i.__inject__&&i.__inject__(ssrContext),i)
 }
 var normalizeComponent = __webpack_require__(/*! ../../node_modules/vue-loader/lib/component-normalizer */ 30)
 /* script */
@@ -12921,8 +12921,46 @@ Component.options.__file = "src\\Client\\Component.vue"
 
 
 /***/ }),
-/* 25 */,
-/* 26 */,
+/* 25 */
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader!./node_modules/css-loader?sourceMap!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-1efd989c","scoped":true,"hasInlineConfig":false}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./src/Client/Component.vue ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../node_modules/css-loader?sourceMap!../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-1efd989c","scoped":true,"hasInlineConfig":false}!../../node_modules/sass-loader/lib/loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Component.vue */ 26);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add CSS to SSR context
+var add = __webpack_require__(/*! ../../node_modules/vue-style-loader/lib/addStylesServer.js */ 28)
+module.exports.__inject__ = function (context) {
+  add("6172be05", content, false, context)
+};
+
+/***/ }),
+/* 26 */
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader?sourceMap!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-1efd989c","scoped":true,"hasInlineConfig":false}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./src/Client/Component.vue ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ 27)(true);
+// imports
+
+
+// module
+exports.push([module.i, "", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Component.vue","sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
 /* 27 */
 /*!*************************************************!*\
   !*** ./node_modules/css-loader/lib/css-base.js ***!
@@ -13253,7 +13291,27 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 31 */,
+/* 31 */
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-1efd989c","hasScoped":true,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0&bustCache!./src/Client/Component.vue ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._ssrNode("Hello World does work... hello bill")])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
 /* 32 */
 /*!***************************************************!*\
   !*** ./node_modules/vue-server-renderer/index.js ***!
@@ -26110,67 +26168,6 @@ SourceNode.prototype.toStringWithSourceMap = function SourceNode_toStringWithSou
 
 exports.SourceNode = SourceNode;
 
-
-/***/ }),
-/* 53 */
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-style-loader!./node_modules/css-loader?sourceMap!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-1efd989c","scoped":true,"hasInlineConfig":false}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./src/Client/Component.vue ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(/*! !../../node_modules/css-loader?sourceMap!../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-1efd989c","scoped":true,"hasInlineConfig":false}!../../node_modules/sass-loader/lib/loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Component.vue */ 54);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to SSR context
-var add = __webpack_require__(/*! ../../node_modules/vue-style-loader/lib/addStylesServer.js */ 28)
-module.exports.__inject__ = function (context) {
-  add("6172be05", content, false, context)
-};
-
-/***/ }),
-/* 54 */
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader?sourceMap!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-1efd989c","scoped":true,"hasInlineConfig":false}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./src/Client/Component.vue ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ 27)(true);
-// imports
-
-
-// module
-exports.push([module.i, "", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Component.vue","sourceRoot":""}]);
-
-// exports
-
-
-/***/ }),
-/* 55 */
-/*!********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-1efd989c","hasScoped":true,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0&bustCache!./src/Client/Component.vue ***!
-  \********************************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/*! exports used: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [_vm._ssrNode("Hello World does work... hello !@#$!@#$")])
-}
-var staticRenderFns = []
-render._withStripped = true
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ })
 /******/ ])));

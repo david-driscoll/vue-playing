@@ -6,7 +6,8 @@
   "scripts": {
     "start": "cross-env ASPNETCORE_ENVIRONMENT=Development npm run server",
     "server": "cd ./src/Web && dotnet watch run",
-    "test": "cross-env NODE_ENV=test mocha-webpack --webpack-config webpack.config.test.ts --require test/Client/setup.js test/**/*Tests.ts"
+    "test": "cross-env NODE_ENV=test mocha-webpack",
+    "coverage": "cross-env NODE_ENV=coverage nyc mocha-webpack"
   },
   "author": "",
   "license": "ISC",
@@ -28,12 +29,14 @@
     "file-loader": "^1.1.6",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-loader": "^0.5.1",
+    "istanbul-instrumenter-loader": "^3.0.0",
     "jsdom": "^11.5.1",
     "jsdom-global": "^3.0.2",
     "json-loader": "^0.5.7",
     "markdown-loader": "^2.0.1",
     "mocha": "^4.0.1",
     "mocha-webpack": "^1.0.1",
+    "nyc": "^11.4.1",
     "postcss-loader": "^2.0.9",
     "posthtml-loader": "^1.0.1",
     "raw-loader": "^0.5.1",
@@ -49,6 +52,7 @@
     "tslint": "^5.8.0",
     "tslint-language-service": "^0.9.7",
     "tslint-loader": "^3.5.3",
+    "tslint-microsoft-contrib": "^5.0.1",
     "typescript": "^2.6.2",
     "url-loader": "^0.6.2",
     "val-loader": "^1.1.0",
@@ -67,5 +71,29 @@
     "vue-class-component": "^6.1.2",
     "vue-property-decorator": "^6.0.0",
     "vue-template-compiler": "^2.5.13"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "include": [
+      "src/**/*.vue",
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "src/**/*.js",
+      "src/**/*.jsx"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "extension": [
+      ".vue",
+      ".ts",
+      ".tsx"
+    ],
+    "instrument": false,
+    "sourceMap": true,
+    "cache": true,
+    "all": true
   }
 }

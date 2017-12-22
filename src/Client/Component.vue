@@ -9,5 +9,5 @@ export default {
 </style>
 
 <template>
-    <div>Hello World does work... hello !@#$!@#$</div>
+    <div>Hello World does work... hello bill</div>
 </template>
