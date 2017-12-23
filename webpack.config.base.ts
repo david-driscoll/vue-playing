@@ -12,33 +12,19 @@ module.exports = {
                 test: /\.vue$/,
                 loader: "vue-loader",
                 options: {
-                    // preloaders: {
-                    //     js: "tslint-loader",
-                    //     ts: "tslint-loader",
-                    // },
+                    preLoaders: {
+                        js: "tslint-loader",
+                        ts: "tslint-loader",
+                    },
                     loaders: {
                         js: [
                             {
-                                loader: "istanbul-instrumenter-loader",
-                                options: {
-                                    esModules: true,
-                                    produceSourceMap: true,
-                                    // preserveComments: true,
-                                    compact: true,
-                                    debug: true,
-                                },
+                                loader: "ts-loader",
                             },
                         ],
                         ts: [
                             {
-                                loader: "istanbul-instrumenter-loader",
-                                options: {
-                                    esModules: true,
-                                    produceSourceMap: true,
-                                    // preserveComments: true,
-                                    compact: true,
-                                    debug: true,
-                                },
+                                loader: "ts-loader",
                             },
                         ],
                     },

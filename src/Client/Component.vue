@@ -6,16 +6,16 @@ export default Vue.extend({
     abc() {
       return "123414";
     },
-    def() {
+    def(): string {
       return "ghi";
     }
   },
   data() {
     return {
       value: "abcd",
-      value2: "abcd"
+      value2: "abcd",
     };
-  }
+  },
 });
 </script>
 

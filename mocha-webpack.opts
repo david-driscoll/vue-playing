@@ -1,4 +1,4 @@
---reporter mocha-multi --reporter-options dot=-,xunit=coverage/tests.xml
+--reporter mocha-multi --reporter-options spec=-,xunit=coverage/tests.xml
 --colors
 --webpack-config webpack.config.test.ts
 --require test/Client/setup.js
