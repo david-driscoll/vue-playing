@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === "coverage") {
         loader: "istanbul-instrumenter-loader",
         options: {
             esModules: true,
-            // produceSourceMap: true,
+            produceSourceMap: true,
             compact: false,
         },
     });
@@ -41,7 +41,7 @@ if (process.env.NODE_ENV === "coverage") {
         loader: "istanbul-instrumenter-loader",
         options: {
             esModules: true,
-            // produceSourceMap: true,
+            produceSourceMap: true,
             compact: false,
         },
     });
