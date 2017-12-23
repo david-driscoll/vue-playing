@@ -68,11 +68,12 @@
 /*!******************************!*\
   !*** ./src/Client/client.ts ***!
   \******************************/
-/*! dynamic exports provided */
+/*! exports provided: default */
 /*! all exports used */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("throw new Error(\"Module build failed: TypeError: Cannot read property 'fileCoverage' of undefined\\n    at Instrumenter.instrumentSync (C:\\\\Other\\\\vue-playing\\\\node_modules\\\\istanbul-lib-instrument\\\\dist\\\\instrumenter.js:147:40)\\n    at Instrumenter.instrument (C:\\\\Other\\\\vue-playing\\\\node_modules\\\\istanbul-lib-instrument\\\\dist\\\\instrumenter.js:176:32)\\n    at Object.exports.default (C:\\\\Other\\\\vue-playing\\\\node_modules\\\\istanbul-instrumenter-loader\\\\dist\\\\index.js:25:16)\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMC5qcyIsInNvdXJjZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///0\n");
+"use strict";
+eval("Object.defineProperty(__webpack_exports__, \"__esModule\", { value: true });\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"export default \\\"import { createApp } from \\\\\\\"./app\\\\\\\";\\\\r\\\\n\\\\r\\\\n// client-specific bootstrapping logic...\\\\r\\\\n\\\\r\\\\nconst { app } = createApp();\\\\r\\\\n\\\\r\\\\n// this assumes App.vue template root element has `id=\\\\\\\"app\\\\\\\"`\\\\r\\\\napp.$mount(\\\\\\\"#app\\\\\\\");\\\\r\\\\n\\\";\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY2xpZW50LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiY2xpZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGVBQWUsOE5BQThOLENBQUEifQ==\");\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/Client/client.ts\n// module id = 0\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/Client/client.ts?");
 
 /***/ })
 /******/ ]);

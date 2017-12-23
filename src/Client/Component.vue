@@ -1,7 +1,22 @@
 <script lang="ts">
-export default {
-    // a() { console.log('') },
-}
+import Vue, { ComponentOptions, VueConstructor } from "vue";
+
+export default Vue.extend({
+  methods: {
+    abc() {
+      return "123414";
+    },
+    def() {
+      return "ghi";
+    }
+  },
+  data() {
+    return {
+      value: "abcd",
+      value2: "abcd"
+    };
+  }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -9,5 +24,5 @@ export default {
 </style>
 
 <template>
-    <div>Hello World does work... hello bill</div>
+    <div>Hello World does work... hello bill {{abc()}} {{value}}</div>
 </template>

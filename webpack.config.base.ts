@@ -1,4 +1,5 @@
 import * as webpack from 'webpack';
+import { resolve } from 'path';
 var FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
 
 module.exports = {
@@ -11,13 +12,35 @@ module.exports = {
                 test: /\.vue$/,
                 loader: "vue-loader",
                 options: {
-                    preloaders: {
-                        js: "tslint-loader",
-                        ts: "tslint-loader",
-                    },
+                    // preloaders: {
+                    //     js: "tslint-loader",
+                    //     ts: "tslint-loader",
+                    // },
                     loaders: {
-                        js: "ts-loader",
-                        ts: "ts-loader",
+                        js: [
+                            {
+                                loader: "istanbul-instrumenter-loader",
+                                options: {
+                                    esModules: true,
+                                    produceSourceMap: true,
+                                    // preserveComments: true,
+                                    compact: true,
+                                    debug: true,
+                                },
+                            },
+                        ],
+                        ts: [
+                            {
+                                loader: "istanbul-instrumenter-loader",
+                                options: {
+                                    esModules: true,
+                                    produceSourceMap: true,
+                                    // preserveComments: true,
+                                    compact: true,
+                                    debug: true,
+                                },
+                            },
+                        ],
                     },
                 },
             },
@@ -28,12 +51,13 @@ module.exports = {
                     {
                         loader: "ts-loader",
                         options: {
-                            appendTsSuffixTo: [/\.vue$/],
+                            appendTsSuffixTo: [/\.vue[^x]?/],
+                            appendTsxSuffixTo: [/\.vuex/],
                         },
                     },
                     {
                         loader: "tslint-loader",
-                    }
+                    },
                 ],
             },
         ],

@@ -16,8 +16,9 @@ const m: webpack.NewModule = me.module as webpack.NewModule;
 // me.target = "node";
 
 if (process.env.NODE_ENV === "coverage") {
-    m.rules.push({
+    m.rules.unshift({
         test: /\.(jsx?|tsx?|.vue)/,
+        include: resolve("src"),
         use: {
             loader: "istanbul-instrumenter-loader",
             options: {
@@ -29,6 +30,21 @@ if (process.env.NODE_ENV === "coverage") {
             },
         },
         // enforce: 'post',
-        include: (x) => { console.log(x); return true; },
+        // include: (x) => { console.log(x); return true; },
     });
 }
+
+
+// m.rules.push({
+//     test: () => true,
+//     use: {
+//         loader: resolve("./loader.ts"),
+//     },
+// });
+
+// m.rules.unshift({
+//     test: () => true,
+//     use: {
+//         loader: resolve("./loader.ts"),
+//     },
+// });
