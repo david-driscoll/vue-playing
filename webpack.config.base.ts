@@ -1,6 +1,9 @@
-import * as webpack from 'webpack';
+// tslint:disable-next-line:no-require-imports
+import FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 import { resolve } from 'path';
-var FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
+import * as webpack from 'webpack';
+
+const tsLintLoader =
 
 module.exports = {
     output: {
@@ -10,21 +13,21 @@ module.exports = {
         rules: [
             {
                 test: /\.vue$/,
-                loader: "vue-loader",
+                loader: 'vue-loader',
                 options: {
                     preLoaders: {
-                        js: "tslint-loader",
-                        ts: "tslint-loader",
+                        js: 'tslint-loader?formatter=codeFrame',
+                        ts: 'tslint-loader?formatter=codeFrame',
                     },
                     loaders: {
                         js: [
                             {
-                                loader: "ts-loader",
+                                loader: 'ts-loader',
                             },
                         ],
                         ts: [
                             {
-                                loader: "ts-loader",
+                                loader: 'ts-loader',
                             },
                         ],
                     },
@@ -35,14 +38,17 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: "ts-loader",
+                        loader: 'ts-loader',
                         options: {
                             appendTsSuffixTo: [/\.vue[^x]?/],
                             appendTsxSuffixTo: [/\.vuex/],
                         },
                     },
                     {
-                        loader: "tslint-loader",
+                        loader: 'tslint-loader',
+                        options: {
+                            formatter: 'codeFrame',
+                        },
                     },
                 ],
             },
@@ -52,13 +58,13 @@ module.exports = {
         new FriendlyErrorsPlugin(),
     ],
     resolve: {
-        extensions: [".ts", ".tsx", ".vue", ".js", ".jsx", ".json", ".css", ".scss"],
+        extensions: ['.ts', '.tsx', '.vue', '.js', '.jsx', '.json', '.css', '.scss'],
     },
     performance: {
-        hints: "warning",
+        hints: 'warning',
 
     },
-    devtool: "source-map",
+    devtool: 'source-map',
     stats: {
         colors: true,
         // assets: true,

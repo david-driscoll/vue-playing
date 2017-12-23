@@ -1,19 +1,19 @@
 <script lang="ts">
-import Vue, { ComponentOptions, VueConstructor } from "vue";
+import Vue, { ComponentOptions, VueConstructor } from 'vue';
 
 export default Vue.extend({
   methods: {
     abc() {
-      return "123414";
+      return '123414';
     },
     def(): string {
-      return "ghi";
+      return 'ghi';
     }
   },
   data() {
     return {
-      value: "abcd",
-      value2: "abcd",
+      value: 'abcd',
+      value2: 'abcd',
     };
   },
 });
