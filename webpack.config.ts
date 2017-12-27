@@ -35,6 +35,7 @@ const client = merge(
         output: {
             path: join(__dirname, 'src/Web/wwwroot/js/'),
             filename: '[name].js',
+            chunkFilename: '[name].bundle.js',
             publicPath: '/js/',
         },
         resolve: {
