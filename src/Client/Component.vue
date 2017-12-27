@@ -15,7 +15,7 @@ export default Vue.extend({
       value: 'abcd',
       value2: 'abcd',
     };
-  }
+  },
 });
 </script>
 
