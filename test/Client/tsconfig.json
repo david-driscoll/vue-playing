@@ -9,7 +9,8 @@
         "enable": true
     },
     "include": [
-        "./**/*",
-        "./../../src/Client/**/*"
+        "./**/*.vue",
+        "./**/*.ts",
+        "./../../src/Client/**/*.ts"
     ]
 }

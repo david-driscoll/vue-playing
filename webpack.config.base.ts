@@ -1,6 +1,5 @@
 // tslint:disable-next-line:no-require-imports
 import FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
-import { resolve } from 'path';
 import * as webpack from 'webpack';
 
 const tsLintLoader =

@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import { shallow } from 'vue-test-utils';
 import { createApp } from '../../src/Client/app';
 

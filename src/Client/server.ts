@@ -1,5 +1,4 @@
 import { createServerRenderer } from 'aspnet-prerendering';
-import Vue from 'vue';
 
 import { createApp } from './app';
 

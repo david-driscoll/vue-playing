@@ -1,5 +1,5 @@
 {
-    "extends": "../../tsconfig.base.json",
+    "extends": "./tsconfig.base.json",
     "compilerOptions": {
         "target": "es3",
         "module": "es2015",
@@ -9,7 +9,9 @@
         "enable": true
     },
     "include": [
-        "./**/*.vue",
-        "./**/*.ts"
+        "webpack.*.ts",
+        "./src/Client/**/*.ts",
+        "./src/Client/**/*.vue",
+        "./test/Client/**/*.ts"
     ]
 }
