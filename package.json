@@ -7,7 +7,8 @@
     "start": "cross-env ASPNETCORE_ENVIRONMENT=Development npm run server",
     "server": "cd ./src/Web && dotnet watch run",
     "test": "cross-env NODE_ENV=test mocha-webpack",
-    "coverage": "cross-env NODE_ENV=coverage node nyc.js mocha-webpack"
+    "coverage": "cross-env NODE_ENV=coverage node nyc.js mocha-webpack",
+    "lint": "tslint -p tsconfig.lint.json --fix"
   },
   "author": "",
   "license": "ISC",

@@ -2,8 +2,6 @@
 import FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 import * as webpack from 'webpack';
 
-const tsLintLoader =
-
 module.exports = {
     output: {
         pathinfo: true,

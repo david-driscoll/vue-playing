@@ -3,7 +3,12 @@
     "compilerOptions": {
         "target": "es3",
         "module": "commonjs",
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "plugins": [
+            {
+                "name": "tslint-language-service"
+            }
+        ]
     },
     "typeAcquisition": {
         "enable": true
