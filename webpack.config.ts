@@ -1,4 +1,5 @@
 import { cloneDeep, merge } from 'lodash';
+import { join } from 'path';
 import * as webpack from 'webpack';
 import * as config from './webpack.config.base';
 
@@ -10,8 +11,10 @@ const server = merge(
             prerenderer: './src/Client/server.ts',
         },
         output: {
-            filename: './src/Web/[name].js',
-            // publicPath: './src/Web/prerenderer',
+            path: join(__dirname, 'src/Web/'),
+            filename: '[name].js',
+            chunkFilename: '[name].bundle.js',
+            publicPath: './src/Web/',
             libraryTarget: 'commonjs',
         },
         resolve: {
@@ -30,7 +33,8 @@ const client = merge(
             client: './src/Client/client.ts',
         },
         output: {
-            filename: './src/Web/wwwroot/js/[name].js',
+            path: join(__dirname, 'src/Web/wwwroot/js/'),
+            filename: '[name].js',
             publicPath: '/js/',
         },
         resolve: {
