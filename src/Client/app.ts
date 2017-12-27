@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import A from './Component.vue';
+import Component from './Component.vue';
 
 // export const app = new Vue({
 //     el: '#app',
@@ -14,7 +14,7 @@ import A from './Component.vue';
 export function createApp() {
   const app = new Vue({
     // the root instance simply renders the App component.
-    render: (h) => h(A), // + "<div>Hello World 123456789</div>"
+    render: (h) => h(Component), // + "<div>Hello World 123456789</div>"
   });
 
   return { app };

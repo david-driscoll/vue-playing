@@ -208,7 +208,7 @@
             true
         ],
         "match-default-export-name": [
-            true
+            false
         ],
         "newline-before-return": true,
         "align": {

@@ -4,7 +4,7 @@ import { createApp } from './app';
 
 export default createServerRenderer(async (params) => {
     // Step 2: Create a renderer
-    const renderer = require('vue-server-renderer').createRenderer();
+    const renderer = (await import('vue-server-renderer')).createRenderer();
 
     const { app } = createApp();
     // in 2.5.0+, returns a Promise if no callback is passed:

@@ -2,31 +2,41 @@
 import FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 import * as webpack from 'webpack';
 
+const tsLintLoader = {
+    // test: /\.ts$/,
+    loader: 'tslint-loader',
+    // exclude: /(node_modules)/,
+    options: {
+        formatter: 'verbose',
+        typeCheck: true,
+        tsConfigFile: 'tsconfig.lint.json',
+    },
+};
+
+const tsLoader = {
+    loader: 'ts-loader',
+    options: {
+        appendTsSuffixTo: [/\.vue[^x]?$/],
+        appendTsxSuffixTo: [/\.vuex$/],
+    },
+};
+
 module.exports = {
     output: {
         pathinfo: true,
     },
     module: {
         rules: [
+            // { enforce: 'pre', ...tsLintLoader },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
                     preLoaders: {
-                        js: 'tslint-loader?formatter=codeFrame',
-                        ts: 'tslint-loader?formatter=codeFrame',
+                        ts: 'tslint-loader?formatter=verbose',
                     },
                     loaders: {
-                        js: [
-                            {
-                                loader: 'ts-loader',
-                            },
-                        ],
-                        ts: [
-                            {
-                                loader: 'ts-loader',
-                            },
-                        ],
+                        ts: 'ts-loader',
                     },
                 },
             },
@@ -34,20 +44,13 @@ module.exports = {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
                 use: [
-                    {
-                        loader: 'ts-loader',
-                        options: {
-                            appendTsSuffixTo: [/\.vue[^x]?/],
-                            appendTsxSuffixTo: [/\.vuex/],
-                        },
-                    },
-                    {
-                        loader: 'tslint-loader',
-                        options: {
-                            formatter: 'codeFrame',
-                        },
-                    },
+                    tsLoader,
                 ],
+            },
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                ...tsLintLoader,
             },
         ],
     },
