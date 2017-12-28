@@ -3,5 +3,15 @@
     "typescript.referencesCodeLens.enabled": true,
     "typescript.tsdk": "node_modules/typescript/lib",
     "typescript.useCodeSnippetsOnMethodSuggest": false,
-    "typescript.reportStyleChecksAsWarnings": true
+    "typescript.reportStyleChecksAsWarnings": true,
+    "tsimporter.doubleQuotes": false,
+    "tsimporter.emitSemicolon": true,
+    "tsimporter.filesToScan": [
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.vue"
+    ],
+    "tsimporter.preferRelative": true,
+    "tsimporter.spaceBetweenBraces": true,
+    "vetur.colorDecorators.enable": true
 }

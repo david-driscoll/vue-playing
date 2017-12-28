@@ -1,4 +1,4 @@
-configure tslint
+
 configure development
   - plugins?
 configure production

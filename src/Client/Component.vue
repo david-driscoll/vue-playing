@@ -1,5 +1,6 @@
 <script lang="ts">
 import Vue, { ComponentOptions, VueConstructor } from 'vue';
+import 'vue-rx';
 
 export default Vue.extend({
   methods: {

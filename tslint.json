@@ -39,7 +39,7 @@
         "label-position": true,
         "max-line-length": {
             "options": [
-                120
+                90
             ]
         },
         "new-parens": true,

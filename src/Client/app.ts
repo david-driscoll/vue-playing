@@ -1,5 +1,5 @@
-import Vue from 'vue';
 import Component from './Component.vue';
+import { Vue } from './vue';
 
 // export const app = new Vue({
 //     el: '#app',
@@ -12,10 +12,10 @@ import Component from './Component.vue';
 // export a factory function for creating fresh app, router and store
 // instances
 export function createApp() {
-  const app = new Vue({
-    // the root instance simply renders the App component.
-    render: (h) => h(Component), // + "<div>Hello World 123456789</div>"
-  });
+    const app = new Vue({
+        // the root instance simply renders the App component.
+        render: h => h(Component), // + "<div>Hello World 123456789</div>"
+    });
 
-  return { app };
+    return { app };
 }
