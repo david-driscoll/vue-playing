@@ -36,7 +36,7 @@ module.exports = {
                         ts: 'tslint-loader?formatter=verbose',
                     },
                     loaders: {
-                        ts: 'ts-loader',
+                        ts: ['ts-loader'],
                     },
                 },
             },

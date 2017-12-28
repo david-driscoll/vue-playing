@@ -37,12 +37,4 @@ if (process.env.NODE_ENV === 'coverage') {
             compact: false,
         },
     });
-    (m.rules[0] as any).options.loaders.js.unshift({
-        loader: 'istanbul-instrumenter-loader',
-        options: {
-            esModules: true,
-            produceSourceMap: true,
-            compact: false,
-        },
-    });
 }
