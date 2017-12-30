@@ -14,10 +14,16 @@ import {
     Watch,
 } from 'vue-property-decorator';
 
-@Component({})
+@Component
 export default class DecoratorComponent extends Vue {
-    @Prop() public a: string;
+    @Prop() public a: string = '';
+
+    method() {
+    }
 }
+
+const a = DecoratorComponent;
+
 </script>
 
 <style>
