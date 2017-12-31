@@ -1,3 +1,4 @@
+import axios from './axios-rx';
 import Component from './Component.vue';
 import { Vue } from './vue';
 
@@ -17,7 +18,7 @@ export function createApp() {
         // the root instance simply renders the App component.
         render: h => h(Component), // + "<div>Hello World 123456789</div>"
         registerServices(container) {
-
+            container.registerInstance('axios', axios);
         },
     });
 
