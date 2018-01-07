@@ -12019,28 +12019,7 @@ module.exports = function (exec) {
 /*! all exports used */
 /***/ (function(module, exports) {
 
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'D:\\Development\\ReadySelect\\vue\\vue-playing\\node_modules\\webpack\\buildin\\global.js'");
 
 /***/ }),
 /* 18 */
@@ -19480,29 +19459,7 @@ if (module) {
 /*! all exports used */
 /***/ (function(module, exports) {
 
-module.exports = function(module) {
-	if(!module.webpackPolyfill) {
-		module.deprecate = function() {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if(!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'D:\\Development\\ReadySelect\\vue\\vue-playing\\node_modules\\webpack\\buildin\\module.js'");
 
 /***/ }),
 /* 92 */
@@ -22815,6 +22772,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "demo-layout" },
     [
       _c(
         "el-row",
@@ -22840,7 +22798,9 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("el-col", { attrs: { span: 8 } }, [
-            _c("div", { staticClass: "grid-content bg-purple" })
+            _c("div", { staticClass: "grid-content bg-purple" }, [
+              _vm._v("1234")
+            ])
           ]),
           _vm._v(" "),
           _c("el-col", { attrs: { span: 4 } }, [

@@ -35,7 +35,7 @@ namespace server
                     c.ProjectPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "..", ".."));
                 }
             });
-            // services.AddSpaPrerenderer();
+            services.AddVuePrerenderer();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -2,9 +2,19 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div id="app"></div>
-<div id="app2" asp-prerender-module="prerender"></div>
+@inject Microsoft.AspNetCore.SpaServices.Prerendering.IVuePrerenderer Prerenderer
+
+@{
+    var result = await Prerenderer.Render("prerender");
+}
+
+<div id="app" style="height: 220px;">@Html.Raw(result.Html)</div>
+<div id="app2" style="height: 220px;">@Html.Raw(result.Html)</div>
+
+@section styles {
+    @Html.Raw(result.Styles)
+}
 
 @section scripts {
-    <script src="~/js/client.js"></script>
+    @Html.Raw(result.Scripts)
 }
