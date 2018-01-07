@@ -15173,7 +15173,7 @@ empty = new Disposable(function () { });
 /*! all exports used */
 /***/ (function(module, exports) {
 
-module.exports = {"_from":"vue-server-renderer@^2.5.13","_id":"vue-server-renderer@2.5.13","_inBundle":false,"_integrity":"sha512-P9+TuLyi3f68PnFg30xUhMADrCjSoLICzEruBGfV7tqbppkmw/wbzFc8dlap2nFYowyUiRlJku2uuMOKCZD3Bw==","_location":"/vue-server-renderer","_phantomChildren":{"escape-string-regexp":"1.0.5","has-ansi":"2.0.0","strip-ansi":"3.0.1"},"_requested":{"type":"range","registry":true,"raw":"vue-server-renderer@^2.5.13","name":"vue-server-renderer","escapedName":"vue-server-renderer","rawSpec":"^2.5.13","saveSpec":null,"fetchSpec":"^2.5.13"},"_requiredBy":["#DEV:/","#USER"],"_resolved":"https://registry.npmjs.org/vue-server-renderer/-/vue-server-renderer-2.5.13.tgz","_shasum":"6a0d421a0fd3e2b7357b59495d744b7e9279d68e","_spec":"vue-server-renderer@^2.5.13","_where":"D:\\Development\\ReadySelect\\vue\\vue-playing","author":{"name":"Evan You"},"bugs":{"url":"https://github.com/vuejs/vue/issues"},"bundleDependencies":false,"dependencies":{"chalk":"^1.1.3","hash-sum":"^1.0.2","he":"^1.1.0","lodash.template":"^4.4.0","lodash.uniq":"^4.5.0","resolve":"^1.2.0","serialize-javascript":"^1.3.0","source-map":"0.5.6"},"deprecated":false,"description":"server renderer for Vue 2.0","devDependencies":{"vue":"file:../.."},"homepage":"https://github.com/vuejs/vue/tree/dev/packages/vue-server-renderer#readme","keywords":["vue","server","ssr"],"license":"MIT","main":"index.js","name":"vue-server-renderer","repository":{"type":"git","url":"git+https://github.com/vuejs/vue.git"},"types":"types/index.d.ts","version":"2.5.13"}
+module.exports = {"_args":[["vue-server-renderer@2.5.13","D:\\Development\\ReadySelect\\vue\\vue-playing"]],"_development":true,"_from":"vue-server-renderer@2.5.13","_id":"vue-server-renderer@2.5.13","_inBundle":false,"_integrity":"sha512-P9+TuLyi3f68PnFg30xUhMADrCjSoLICzEruBGfV7tqbppkmw/wbzFc8dlap2nFYowyUiRlJku2uuMOKCZD3Bw==","_location":"/vue-server-renderer","_phantomChildren":{"escape-string-regexp":"1.0.5","has-ansi":"2.0.0","strip-ansi":"3.0.1"},"_requested":{"type":"version","registry":true,"raw":"vue-server-renderer@2.5.13","name":"vue-server-renderer","escapedName":"vue-server-renderer","rawSpec":"2.5.13","saveSpec":null,"fetchSpec":"2.5.13"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/vue-server-renderer/-/vue-server-renderer-2.5.13.tgz","_spec":"2.5.13","_where":"D:\\Development\\ReadySelect\\vue\\vue-playing","author":{"name":"Evan You"},"bugs":{"url":"https://github.com/vuejs/vue/issues"},"dependencies":{"chalk":"^1.1.3","hash-sum":"^1.0.2","he":"^1.1.0","lodash.template":"^4.4.0","lodash.uniq":"^4.5.0","resolve":"^1.2.0","serialize-javascript":"^1.3.0","source-map":"0.5.6"},"description":"server renderer for Vue 2.0","devDependencies":{"vue":"file:../.."},"homepage":"https://github.com/vuejs/vue/tree/dev/packages/vue-server-renderer#readme","keywords":["vue","server","ssr"],"license":"MIT","main":"index.js","name":"vue-server-renderer","repository":{"type":"git","url":"git+https://github.com/vuejs/vue.git"},"types":"types/index.d.ts","version":"2.5.13"}
 
 /***/ }),
 /* 60 */
@@ -29714,7 +29714,29 @@ exports.createBundleRenderer = createBundleRenderer;
 /*! all exports used */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'D:\\Development\\ReadySelect\\vue\\vue-playing\\node_modules\\webpack\\buildin\\module.js'");
+module.exports = function(module) {
+	if(!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if(!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
 
 /***/ }),
 /* 115 */
