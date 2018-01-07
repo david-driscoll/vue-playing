@@ -1,6 +1,8 @@
 import axios from './axios-rx';
 import Component from './Component.vue';
 import { Vue } from './vue';
+import './element-variables.scss';
+
 
 // export const app = new Vue({
 //     el: '#app',

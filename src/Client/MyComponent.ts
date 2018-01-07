@@ -1,10 +1,7 @@
 import Vue from 'vue';
 import { Component, Prop, Watch } from 'vue-property-decorator';
 
-@Component({
-})
+@Component({})
 export class MyComponent extends Vue {
     @Prop() public prop: string;
-
-    @Watch() public watch: string;
 }

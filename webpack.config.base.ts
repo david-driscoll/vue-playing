@@ -1,6 +1,11 @@
 // tslint:disable-next-line:no-require-imports
-import FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
+import * as FriendlyErrorsPlugin from 'friendly-errors-webpack-plugin';
 import * as webpack from 'webpack';
+
+const extractSass = new ExtractTextPlugin({
+    filename: '[name].[contenthash].css',
+});
 
 const tsLintLoader = {
     // test: /\.ts$/,
@@ -27,7 +32,6 @@ module.exports = {
     },
     module: {
         rules: [
-            // { enforce: 'pre', ...tsLintLoader },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
@@ -37,32 +41,55 @@ module.exports = {
                     },
                     loaders: {
                         ts: ['ts-loader'],
+                        scss: ['css-loader!sass-loader'],
                     },
                 },
             },
             {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
-                use: [
-                    tsLoader,
-                ],
+                use: [tsLoader],
             },
             {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
                 ...tsLintLoader,
             },
+            {
+                test: /\.scss$/,
+                use: extractSass.extract({
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true,
+                            },
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true,
+                            },
+                        },
+                    ],
+                }),
+            },
+            {
+                test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                loader: 'file-loader',
+            },
         ],
     },
     plugins: [
+        extractSass,
         new FriendlyErrorsPlugin(),
+        new webpack.IgnorePlugin(/vue-ssr/),
     ],
     resolve: {
         extensions: ['.ts', '.tsx', '.vue', '.js', '.jsx', '.json', '.css', '.scss'],
     },
     performance: {
         hints: 'warning',
-
     },
     devtool: 'source-map',
     stats: {
@@ -92,5 +119,4 @@ module.exports = {
     },
     // profile: true,
     // cache: true,
-
 } as webpack.Configuration;

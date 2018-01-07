@@ -1,5 +1,6 @@
+import Element from 'element-ui';
 import Vue from 'vue';
-import VueDI from 'vue-di';
+import * as VueDI from 'vue-di';
 import VueRouter from 'vue-router';
 import * as VueRx from 'vue-rx';
 
@@ -9,6 +10,7 @@ import { Subscription } from 'rxjs/Subscription'; // Disposable if using RxJS4
 
 Vue.use(VueRouter);
 Vue.use(VueDI);
+Vue.use(Element);
 Vue.use(VueRx, { Observable, Subscription, Subject });
 
 export { Vue };
