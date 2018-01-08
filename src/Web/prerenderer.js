@@ -3003,18 +3003,18 @@ module.exports = function serialize(obj, options) {
   !*** ./node_modules/tslib/tslib.es6.js ***!
   \*****************************************/
 /*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject */
-/*! exports used: __assign, __awaiter, __generator */
+/*! exports used: __assign, __awaiter, __decorate, __extends, __generator */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export __extends */
+/* harmony export (immutable) */ __webpack_exports__["d"] = __extends;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __assign; });
 /* unused harmony export __rest */
-/* unused harmony export __decorate */
+/* harmony export (immutable) */ __webpack_exports__["c"] = __decorate;
 /* unused harmony export __param */
 /* unused harmony export __metadata */
 /* harmony export (immutable) */ __webpack_exports__["b"] = __awaiter;
-/* harmony export (immutable) */ __webpack_exports__["c"] = __generator;
+/* harmony export (immutable) */ __webpack_exports__["e"] = __generator;
 /* unused harmony export __exportStar */
 /* unused harmony export __values */
 /* unused harmony export __read */
@@ -25666,7 +25666,7 @@ var _this = this;
 //     const { clientManifest, __dirname } = bootstrap;
 /* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_1_aspnet_prerendering__["createServerRenderer"])(function (params) { return __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __awaiter */](_this, void 0, void 0, function () {
     var createApp, contentRootPath, webRootPath, clientManifest, renderer, app, context, html, styles, scripts, preloadFiles, resourceHints, state;
-    return __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __generator */](this, function (_a) {
+    return __WEBPACK_IMPORTED_MODULE_0_tslib__["e" /* __generator */](this, function (_a) {
         switch (_a.label) {
             case 0:
                 console.log(__dirname, params);
