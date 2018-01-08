@@ -23,6 +23,7 @@ namespace Microsoft.AspNetCore.SpaServices.Prerendering
 
         private readonly string _applicationBasePath;
         private readonly CancellationToken _applicationStoppingToken;
+        private readonly IHostingEnvironment _hostEnv;
         private readonly INodeServices _nodeServices;
 
         /// <summary>
@@ -31,9 +32,9 @@ namespace Microsoft.AspNetCore.SpaServices.Prerendering
         /// <param name="serviceProvider">The <see cref="IServiceProvider"/>.</param>
         public VueRenderTagHelper(IServiceProvider serviceProvider)
         {
-            var hostEnv = (IHostingEnvironment) serviceProvider.GetService(typeof(IHostingEnvironment));
+            _hostEnv = (IHostingEnvironment) serviceProvider.GetService(typeof(IHostingEnvironment));
             _nodeServices = (INodeServices) serviceProvider.GetService(typeof(INodeServices)) ?? _fallbackNodeServices;
-            _applicationBasePath = hostEnv.ContentRootPath;
+            _applicationBasePath = _hostEnv.ContentRootPath;
 
             var applicationLifetime = (IApplicationLifetime) serviceProvider.GetService(typeof(IApplicationLifetime));
             _applicationStoppingToken = applicationLifetime.ApplicationStopping;
@@ -90,6 +91,7 @@ namespace Microsoft.AspNetCore.SpaServices.Prerendering
             var result = await VueRenderer.Render(
                 _applicationBasePath,
                 _nodeServices,
+                _hostEnv,
                 _applicationStoppingToken,
                 new JavaScriptModuleExport(ModuleName)
                 {

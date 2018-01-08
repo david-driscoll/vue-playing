@@ -12,8 +12,6 @@ const server = merge(cloneDeep(config), {
     },
     output: {
         path: join(__dirname, 'src/Web/'),
-        filename: '[name].js',
-        chunkFilename: '[name].bundle.js',
         publicPath: './src/Web/',
         libraryTarget: 'commonjs2',
     },
@@ -24,7 +22,6 @@ const server = merge(cloneDeep(config), {
     },
 } as webpack.Configuration);
 
-
 const client = merge(cloneDeep(config), {
     target: 'web',
     entry: {
@@ -32,8 +29,6 @@ const client = merge(cloneDeep(config), {
     },
     output: {
         path: join(__dirname, 'src/Web/wwwroot/js/'),
-        filename: '[name].js',
-        chunkFilename: '[name].bundle.js',
         publicPath: '/js/',
     },
     resolve: {
@@ -42,9 +37,11 @@ const client = merge(cloneDeep(config), {
         },
     },
     plugins: [
-        // Important: this splits the webpack runtime into a leading chunk
-        // so that async chunks can be injected right after it.
-        // this also enables better caching for your app/vendor code.
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: module =>
+                module.context && module.context.includes('node_modules'),
+        }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest',
             minChunks: Infinity,

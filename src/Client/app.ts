@@ -1,7 +1,7 @@
 import axios from './axios-rx';
 import Component from './Component.vue';
-import { Vue } from './vue';
 import './element-variables.scss';
+import { Vue } from './vue';
 
 
 // export const app = new Vue({

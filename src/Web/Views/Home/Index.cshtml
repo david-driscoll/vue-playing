@@ -1,20 +1,27 @@
 ﻿@{
+    Layout = "";
+}
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 @inject Microsoft.AspNetCore.SpaServices.Prerendering.IVuePrerenderer Prerenderer
 
 @{
-    var result = await Prerenderer.Render("prerender");
+    // var result = await Prerenderer.Render("prerender");
+    var result = await Prerenderer.Render(
+        "prerenderer",
+        customDataParameter: new {
+            template = "index.template.html"
+        }
+    );
 }
 
-<div id="app" style="height: 220px;">@Html.Raw(result.Html)</div>
-<div id="app2" style="height: 220px;">@Html.Raw(result.Html)</div>
+@Html.Raw(result.Html)
 
 @section styles {
-    @Html.Raw(result.Styles)
 }
 
 @section scripts {
-    @Html.Raw(result.Scripts)
 }

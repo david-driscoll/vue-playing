@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.NodeServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Microsoft.AspNetCore.SpaServices.Prerendering
 {
@@ -19,6 +22,7 @@ namespace Microsoft.AspNetCore.SpaServices.Prerendering
         internal static Task<VueRenderResult> Render(
             string applicationBasePath,
             INodeServices nodeServices,
+            IHostingEnvironment environment,
             CancellationToken applicationStoppingToken,
             JavaScriptModuleExport bootModule,
             HttpContext httpContext,
@@ -41,6 +45,7 @@ namespace Microsoft.AspNetCore.SpaServices.Prerendering
             return Render(
                 applicationBasePath,
                 nodeServices,
+                environment,
                 applicationStoppingToken,
                 bootModule,
                 unencodedAbsoluteUrl,
@@ -66,6 +71,7 @@ namespace Microsoft.AspNetCore.SpaServices.Prerendering
         public static Task<VueRenderResult> Render(
             string applicationBasePath,
             INodeServices nodeServices,
+            IHostingEnvironment environment,
             CancellationToken applicationStoppingToken,
             JavaScriptModuleExport bootModule,
             string requestAbsoluteUrl,
@@ -74,6 +80,10 @@ namespace Microsoft.AspNetCore.SpaServices.Prerendering
             int timeoutMilliseconds,
             string requestPathBase)
         {
+            var data = JObject.FromObject(customDataParameter);
+            data["contentRootPath"] = environment.ContentRootPath;
+            data["webRootPath"] = environment.WebRootPath;
+
             return nodeServices.InvokeExportAsync<VueRenderResult>(
                 GetNodeScriptFilename(applicationStoppingToken),
                 "renderToString",
@@ -81,14 +91,14 @@ namespace Microsoft.AspNetCore.SpaServices.Prerendering
                 bootModule,
                 requestAbsoluteUrl,
                 requestPathAndQuery,
-                customDataParameter,
+                data,
                 timeoutMilliseconds,
                 requestPathBase);
         }
 
         private static string GetNodeScriptFilename(CancellationToken applicationStoppingToken)
         {
-            lock(CreateNodeScriptLock)
+            lock (CreateNodeScriptLock)
             {
                 if (NodeScript == null)
                 {

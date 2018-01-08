@@ -17,7 +17,7 @@ export default class extends Vue {
     value2 = 'abcd';
 
     abc() {
-        return '123414';
+        return '456';
     }
     def(): string {
         return 'ghi';
@@ -55,7 +55,7 @@ export default class extends Vue {
 </style>
 
 <template>
-<div class="demo-layout">
+<div class="demo-layout" id="app">
     <el-row :gutter="20">
   <el-col :span="16"><div class="grid-content bg-purple"></div></el-col>
   <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
