@@ -6,21 +6,16 @@ import { createRenderer } from 'vue-server-renderer';
 // export default (bootstrap: { clientManifest: any; __dirname: string }) => {
 //     const { clientManifest, __dirname } = bootstrap;
 export default createServerRenderer(async params => {
-    console.log(__dirname, params);
-
     const { createApp } = await import('./app');
 
     const contentRootPath = params.data.contentRootPath;
     const webRootPath = params.data.webRootPath;
-
-    console.log('manifest path: ', path.join(webRootPath, '/js/vue-ssr-client-manifest.json'));
 
     const clientManifest = JSON.parse(fs.readFileSync(
         path.join(webRootPath, '/js/vue-ssr-client-manifest.json'),
         'utf-8'
     ));
 
-    // console.log(clientManifest);
     // Step 2: Create a renderer
     const renderer = createRenderer({
         clientManifest,

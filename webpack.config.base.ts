@@ -164,7 +164,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: assetsPath('img/[name].[hash:7].[ext]'),
+                    fallback: 'file-loader',
                 },
             },
             {
@@ -172,7 +172,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: assetsPath('media/[name].[hash:7].[ext]'),
+                    fallback: 'file-loader',
                 },
             },
             {
@@ -180,7 +180,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: assetsPath('fonts/[name].[hash:7].[ext]'),
+                    fallback: 'file-loader',
                 },
             },
         ],
