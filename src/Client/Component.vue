@@ -62,7 +62,7 @@ export default class extends Vue {
 </el-row>
 <el-row :gutter="20">
   <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="8"><div class="grid-content bg-purple">1234</div></el-col>
+  <el-col :span="8"><div class="grid-content bg-purple">123412341234</div></el-col>
   <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
   <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
 </el-row>

@@ -2,19 +2,20 @@ import { createServerRenderer } from 'aspnet-prerendering';
 import * as fs from 'fs';
 import * as path from 'path';
 import { createRenderer } from 'vue-server-renderer';
+import { createApp } from './app';
 
 // export default (bootstrap: { clientManifest: any; __dirname: string }) => {
 //     const { clientManifest, __dirname } = bootstrap;
 export default createServerRenderer(async params => {
-    const { createApp } = await import('./app');
-
     const contentRootPath = params.data.contentRootPath;
     const webRootPath = params.data.webRootPath;
 
-    const clientManifest = JSON.parse(fs.readFileSync(
-        path.join(webRootPath, '/js/vue-ssr-client-manifest.json'),
-        'utf-8'
-    ));
+    const clientManifest = JSON.parse(
+        fs.readFileSync(
+            path.join(webRootPath, '/js/vue-ssr-client-manifest.json'),
+            'utf-8'
+        )
+    );
 
     // Step 2: Create a renderer
     const renderer = createRenderer({

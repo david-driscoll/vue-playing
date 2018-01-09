@@ -123,7 +123,7 @@ module.exports = {
                 options: {
                     extractCSS: isProduction,
                     preLoaders: {
-                        ts: 'tslint-loader?formatter=verbose',
+                        ts: 'thread-loader!tslint-loader?formatter=verbose',
                     },
                     loaders: {
                         // ts: ['cache-loader!ts-loader'],
@@ -152,7 +152,7 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
-                ...tsLintLoader,
+                use: ['thread-loader', tsLintLoader],
             },
             ...styleLoaders({
                 sourceMap: true,
@@ -185,24 +185,7 @@ module.exports = {
             },
         ],
     },
-    plugins: [
-        // // it is common to extract deps into a vendor chunk for better caching.
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     name: 'vendor',
-        //     minChunks: module => {
-        //         // a module is extracted into the vendor chunk when...
-        //         return (
-        //             // if it's inside node_modules
-        //             /node_modules/.test(module.context) &&
-        //             // do not externalize if the request is a CSS file
-        //             !/\.css$/.test(module.request)
-        //         );
-        //     },
-        // }),
-        extractSass,
-        new FriendlyErrorsPlugin(),
-        new webpack.NamedModulesPlugin(),
-    ],
+    plugins: [extractSass, new FriendlyErrorsPlugin(), new webpack.NamedModulesPlugin()],
     resolve: {
         extensions: ['.ts', '.tsx', '.vue', '.js', '.jsx', '.json', '.css', '.scss'],
     },
