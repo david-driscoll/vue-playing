@@ -12,7 +12,7 @@ const server = merge(cloneDeep(config), {
     },
     output: {
         path: join(__dirname, 'src/Web/'),
-        publicPath: './src/Web/',
+        // publicPath: './src/Web/',
         libraryTarget: 'commonjs2',
     },
     resolve: {

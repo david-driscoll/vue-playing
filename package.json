@@ -82,6 +82,7 @@
         "axios": "^0.17.1",
         "element-ui": "^2.0.10",
         "lodash": "^4.17.4",
+        "lodash.uniq": "^4.5.0",
         "node-sass": "^4.7.2",
         "rxjs": "^5.5.6",
         "tslib": "^1.8.1",
