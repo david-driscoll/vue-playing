@@ -5,18 +5,18 @@
     "vendor.js",
     "client.js",
     "manifest.js",
-    "1.5ffd816a58370f647a39.hot-update.js",
-    "5ffd816a58370f647a39.hot-update.json",
+    "1.1385402077f00a1be556.hot-update.js",
+    "1385402077f00a1be556.hot-update.json",
     "vendor.js.map",
     "client.js.map",
-    "1.5ffd816a58370f647a39.hot-update.js.map",
+    "1.1385402077f00a1be556.hot-update.js.map",
     "manifest.js.map"
   ],
   "initial": [
     "manifest.js",
     "vendor.js",
     "client.js",
-    "1.5ffd816a58370f647a39.hot-update.js"
+    "1.1385402077f00a1be556.hot-update.js"
   ],
   "async": [],
   "modules": {
@@ -575,10 +575,11 @@
       6,
       0
     ],
-    "68b73c45": [
-      1,
-      6,
-      0
+    "18442fe9": [
+      2,
+      4,
+      7,
+      8
     ],
     "79f4d1c6": [
       2,
@@ -656,13 +657,12 @@
       6,
       0
     ],
-    "545aabf7": [
-      2,
-      4,
-      7,
-      8
+    "7b76ebdd": [
+      1,
+      6,
+      0
     ],
-    "18442fe9": [
+    "545aabf7": [
       2,
       4,
       7,
@@ -1024,6 +1024,11 @@
       0
     ],
     "3d356ab0": [
+      1,
+      6,
+      0
+    ],
+    "68b73c45": [
       1,
       6,
       0

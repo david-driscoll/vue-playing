@@ -15,15 +15,12 @@ import {
 } from 'vue-property-decorator';
 
 @Component
-export default class DecoratorComponent extends Vue {
+export default class extends Vue {
     @Prop() public a: string = '';
 
     method() {
     }
 }
-
-const a = DecoratorComponent;
-
 </script>
 
 <style>
