@@ -8,11 +8,11 @@ import * as config from './webpack.config.base';
 const server = merge(cloneDeep(config), {
     target: 'node',
     entry: {
-        prerenderer: './src/Client/server.ts',
+        prerenderer: './client/entries/ssr-entry.ts',
     },
     output: {
-        path: join(__dirname, 'src/Web/'),
-        // publicPath: './src/Web/',
+        path: join(__dirname, 'server/'),
+        // publicPath: './server/',
         libraryTarget: 'commonjs2',
     },
     resolve: {
@@ -25,10 +25,10 @@ const server = merge(cloneDeep(config), {
 const client = merge(cloneDeep(config), {
     target: 'web',
     entry: {
-        client: './src/Client/client.ts',
+        client: './client/entries/browser-entry.ts',
     },
     output: {
-        path: join(__dirname, 'src/Web/wwwroot/js/'),
+        path: join(__dirname, 'server/wwwroot/js/'),
         publicPath: '/js/',
     },
     resolve: {

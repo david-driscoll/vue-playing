@@ -10,8 +10,8 @@
     },
     "include": [
         "webpack.*.ts",
-        "./src/Client/**/*.ts",
-        "./src/Client/**/*.vue",
-        "./test/Client/**/*.ts"
+        "./client/**/*.ts",
+        "./client/**/*.tsx",
+        "./client/**/*.vue"
     ]
 }

@@ -1,0 +1,21 @@
+{
+    "extends": "../tsconfig.base.json",
+    "compilerOptions": {
+        "target": "es3",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "plugins": [
+            {
+                "name": "tslint-language-service"
+            }
+        ]
+    },
+    "typeAcquisition": {
+        "enable": true
+    },
+    "include": [
+        "./**/*.vue",
+        "./**/*.ts",
+        "./**/*.tsx"
+    ]
+}

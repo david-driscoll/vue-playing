@@ -4,10 +4,11 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "postinstall": "dotnet restore",
         "start": "cross-env ASPNETCORE_ENVIRONMENT=Development npm run server",
         "build": "webpack",
         "watch": "webpack --watch",
-        "server": "cd ./src/Web && dotnet watch run",
+        "server": "cd ./server && dotnet watch run",
         "test": "cross-env NODE_ENV=test mocha-webpack",
         "coverage": "cross-env NODE_ENV=coverage node nyc.js mocha-webpack",
         "prettier": "prettier **/*.ts --write",
@@ -98,12 +99,12 @@
         "check-coverage": false,
         "per-file": true,
         "include": [
-            "src/**/*.vue",
-            "src/**/*.vuex",
-            "src/**/*.ts",
-            "src/**/*.tsx",
-            "src/**/*.js",
-            "src/**/*.jsx"
+            "client/**/*.vue",
+            "client/**/*.vuex",
+            "client/**/*.ts",
+            "client/**/*.tsx",
+            "client/**/*.js",
+            "client/**/*.jsx"
         ],
         "reporter": [
             "lcov",

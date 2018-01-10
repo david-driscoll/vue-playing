@@ -104,7 +104,7 @@ function styleLoaders(options: any = {}) {
 }
 
 function assetsPath(path: string) {
-    return posix.join(__dirname, 'src/Web/wwwroot/js', path);
+    return posix.join(__dirname, 'server/wwwroot/js', path);
 }
 
 module.exports = {
