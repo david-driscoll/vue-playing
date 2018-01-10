@@ -1,6 +1,6 @@
 --reporter mocha-multi --reporter-options spec=-,xunit=coverage/tests.xml
 --colors
 --webpack-config webpack.config.test.ts
---require test/Client/setup.js
+--require test/setup.js
 --interactive false
-test/**/*Tests.ts
+test/**/*.spec.ts

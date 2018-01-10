@@ -13,8 +13,6 @@ import 'vue-rx';
 
 @Component
 export default class C extends Vue {
-    value = 'abcd';
-    value2 = 'abcd';
     asideVisible = true;
     width = 300;
 

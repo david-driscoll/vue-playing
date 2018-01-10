@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import * as webpack from 'webpack';
 import * as config from './webpack.config';
+import * as _ from 'lodash';
 
 const me: webpack.Configuration = module.exports = (config as any)[0];
 
@@ -15,10 +16,12 @@ me.devtool = '#inline-source-map';
 const m: webpack.NewModule = me.module as webpack.NewModule;
 // me.target = "node";
 
+_.remove(me.plugins!, x => x instanceof webpack.optimize.CommonsChunkPlugin);
+
 if (process.env.NODE_ENV === 'coverage') {
     m.rules.splice(1, 0, {
         test: /\.(jsx?|tsx?|.vue)/,
-        include: resolve('src'),
+        include: resolve('client'),
         use: {
             loader: 'istanbul-instrumenter-loader',
             options: {

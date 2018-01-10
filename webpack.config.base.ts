@@ -123,7 +123,7 @@ module.exports = {
                 options: {
                     extractCSS: isProduction,
                     preLoaders: {
-                        ts: 'thread-loader!tslint-loader?formatter=verbose',
+                        ts: 'tslint-loader?formatter=verbose',
                     },
                     loaders: {
                         // ts: ['cache-loader!ts-loader'],
@@ -149,11 +149,11 @@ module.exports = {
                 // use: ['cache-loader', tsLoader],
                 use: [tsLoader],
             },
-            {
-                test: /\.tsx?$/,
-                exclude: /node_modules/,
-                use: ['thread-loader', tsLintLoader],
-            },
+            // {
+            //     test: /\.tsx?$/,
+            //     exclude: /node_modules/,
+            //     use: [tsLintLoader],
+            // },
             ...styleLoaders({
                 sourceMap: true,
                 extract: isProduction,
