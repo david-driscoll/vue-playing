@@ -42,9 +42,9 @@ var Component = normalizeComponent(
 Component.options.__file = "client\\Component.vue"
 
 /* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
+if (true) {(function () {
+  var hotAPI = __webpack_require__(/*! vue-hot-reload-api */ "./node_modules/vue-hot-reload-api/dist/index.js")
+  hotAPI.install(__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.browser.js"), false)
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
@@ -226,12 +226,12 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var update = __webpack_require__(/*! ../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js")("005b66b4", content, false);
 // Hot Module Replacement
-if(false) {
+if(true) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../node_modules/css-loader/index.js??ref--7-1!../node_modules/sass-loader/lib/loader.js??ref--7-2!./element-variables.scss", function() {
-     var newContent = require("!!../node_modules/css-loader/index.js??ref--7-1!../node_modules/sass-loader/lib/loader.js??ref--7-2!./element-variables.scss");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+   module.hot.accept(/*! !../node_modules/css-loader??ref--7-1!../node_modules/sass-loader/lib/loader.js??ref--7-2!./element-variables.scss */ "./node_modules/css-loader/index.js?{\"sourceMap\":true}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true}!./client/element-variables.scss", function() {
+     var newContent = __webpack_require__(/*! !../node_modules/css-loader??ref--7-1!../node_modules/sass-loader/lib/loader.js??ref--7-2!./element-variables.scss */ "./node_modules/css-loader/index.js?{\"sourceMap\":true}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true}!./client/element-variables.scss");
+     if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
      update(newContent);
    });
  }
@@ -487,10 +487,10 @@ var staticRenderFns = []
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
-if (false) {
+if (true) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-775ad0cc", esExports)
+    __webpack_require__(/*! vue-hot-reload-api */ "./node_modules/vue-hot-reload-api/dist/index.js")      .rerender("data-v-775ad0cc", esExports)
   }
 }
 
@@ -513,12 +513,12 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var update = __webpack_require__(/*! ../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js")("0f2515aa", content, false);
 // Hot Module Replacement
-if(false) {
+if(true) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../node_modules/css-loader/index.js?{\"sourceMap\":true}!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-775ad0cc\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Component.vue", function() {
-     var newContent = require("!!../node_modules/css-loader/index.js?{\"sourceMap\":true}!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-775ad0cc\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Component.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+   module.hot.accept(/*! !../node_modules/css-loader?{"sourceMap":true}!../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-775ad0cc","scoped":false,"hasInlineConfig":false}!../node_modules/sass-loader/lib/loader.js?{"sourceMap":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Component.vue */ "./node_modules/css-loader/index.js?{\"sourceMap\":true}!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-775ad0cc\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./client/Component.vue", function() {
+     var newContent = __webpack_require__(/*! !../node_modules/css-loader?{"sourceMap":true}!../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-775ad0cc","scoped":false,"hasInlineConfig":false}!../node_modules/sass-loader/lib/loader.js?{"sourceMap":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Component.vue */ "./node_modules/css-loader/index.js?{\"sourceMap\":true}!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-775ad0cc\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/sass-loader/lib/loader.js?{\"sourceMap\":true}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./client/Component.vue");
+     if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
      update(newContent);
    });
  }
@@ -526,7 +526,21 @@ if(false) {
  module.hot.dispose(function() { update(); });
 }
 
+/***/ }),
+
+/***/ 0:
+/*!***********************************************************************************************************************!*\
+  !*** multi webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true ./client/entries/browser-entry.ts ***!
+  \***********************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true */"./node_modules/webpack-hot-middleware/client.js?path=__webpack_hmr&dynamicPublicPath=true");
+module.exports = __webpack_require__(/*! ./client/entries/browser-entry.ts */"./client/entries/browser-entry.ts");
+
+
 /***/ })
 
-},["./client/entries/browser-entry.ts"]);
+},[0]);
 //# sourceMappingURL=client.js.map
