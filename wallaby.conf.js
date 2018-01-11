@@ -1,16 +1,15 @@
-require('ts-node/register');
-
 const parser = require('vue-loader/lib/parser');
 
 var Module = require('module').Module;
 var modulePrototype = Module.prototype;
 var originalRequire = modulePrototype.require;
-modulePrototype.require = function (filePath) {
-  if (filePath === 'source-map-support') {
-    return {install: () => {}};
-  }
-  return originalRequire.call(this, filePath);
+modulePrototype.require = function(filePath) {
+    if (filePath === 'source-map-support') {
+        return { install: () => {} };
+    }
+    return originalRequire.call(this, filePath);
 };
+require('ts-node/register');
 
 module.exports = function(wallaby) {
     return {

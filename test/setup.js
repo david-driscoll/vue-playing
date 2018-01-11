@@ -1,19 +1,31 @@
 // setup JSDOM
 require('jsdom-global')();
 
-// Have to shim here for tests
-const vueFull = require('vue/dist/vue.common');
-vueFull.default = vueFull;
-vueFull.full = 'full';
-
-const vue = require('vue');
-const vueRouter = require('vue-router');
-vueRouter.default = vueRouter;
-Object.assign(vue, vueFull);
-
-vue.config.errorHandler = function(err) {
-    throw err;
+var Module = require('module').Module;
+var modulePrototype = Module.prototype;
+var originalRequire = modulePrototype.require;
+modulePrototype.require = function(filePath) {
+    if (filePath === 'source-map-support') {
+        return { install: () => {} };
+    }
+    if (filePath === 'vue') {
+        return {
+            default: originalRequire(require.resolve('vue/dist/vue.common')),
+            __esModule: true,
+        };
+    }
+    if (filePath === 'vue-router') {
+        return {
+            default: originalRequire(require.resolve('vue-router')),
+            __esModule: true,
+        };
+    }
+    return originalRequire.call(this, filePath);
 };
+
+// vue.config.errorHandler = function(err) {
+//     throw err;
+// };
 
 var chai = require('chai');
 var sinonChai = require('sinon-chai');

@@ -9,8 +9,9 @@
         "build": "webpack",
         "watch": "webpack --watch",
         "server": "cd ./server && dotnet watch run",
-        "test": "cross-env NODE_ENV=test mocha-webpack",
-        "coverage": "cross-env NODE_ENV=coverage node nyc.js mocha-webpack",
+        "test": "mocha",
+        "coverage": "nyc npm test",
+        "coverage2": "node nyc-shim.js npm test",
         "prettier": "prettier **/*.ts --write",
         "lint": "tslint -p tsconfig.lint.json --fix"
     },
@@ -119,9 +120,9 @@
             ".ts",
             ".tsx"
         ],
-        "instrument": false,
+        "instrument": true,
         "sourceMap": true,
-        "cache": false,
+        "cache": true,
         "all": true
     }
 }
