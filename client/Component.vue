@@ -11,26 +11,80 @@ import {
 } from 'vue-property-decorator';
 import 'vue-rx';
 
-@Component
+@Component({
+    components: {},
+})
 export default class C extends Vue {
     asideVisible = true;
-    width = 300;
+    asideCollapse = true;
+    menuWidth = '300px';
 
     toggleMenu() {
-        this.asideVisible = !this.asideVisible;
+        // this.asideVisible = !this.asideVisible;
+        this.asideCollapse = !this.asideCollapse;
+    }
+
+    get width() {
+        if (this.asideCollapse) {
+            return '68px';
+        }
+        return this.menuWidth;
+    }
+
+    get marginLeft() {
+        return !this.asideVisible ? `-${this.width}` : '0px';
+    }
+
+    beforeEnter(el: HTMLElement) {
+        el.style.marginLeft = `-${this.width}`;
+        setTimeout(() => (el.style.marginLeft = this.marginLeft), 10);
+    }
+
+    beforeLeave(el: HTMLElement) {
+        el.style.marginLeft = this.marginLeft;
     }
 }
 </script>
 
 <template>
-    <el-container style="height: 100%; border: 1px solid #eee" direction="vertical" class="demo-layout" id="app">
-        <el-header style="text-align: left; font-size: 12px">
-            <i class="el-icon-menu" style="font-size: 40px;" @click="toggleMenu"></i>
-        </el-header>
-        <el-container direction="horizontal">
-            <el-aside v-if="asideVisible" :width="width">
-                this is some side content
+    <el-container style="height: 100%; border: 1px solid #eee" direction="horizontal" class="demo-layout" id="app">
+        <transition name="fade" v-on:before-enter="beforeEnter" v-on:before-leave="beforeLeave">
+            <el-aside class="menu" v-if="asideVisible" :style="{ marginLeft, width }">
+                <el-menu default-active="2" class="el-menu-vertical-demo" :collapse="asideCollapse" :style="{ width }">
+                    <el-submenu index="1">
+                        <template slot="title">
+                            <i class="el-icon-location"></i>
+                            <span slot="title">Navigator One</span>
+                        </template>
+                        <el-menu-item-group>
+                            <span slot="title">Group One</span>
+                            <el-menu-item index="1-1">item one</el-menu-item>
+                            <el-menu-item index="1-2">item two</el-menu-item>
+                        </el-menu-item-group>
+                        <el-menu-item-group title="Group Two">
+                            <el-menu-item index="1-3">item three</el-menu-item>
+                        </el-menu-item-group>
+                        <el-submenu index="1-4">
+                            <span slot="title">item four</span>
+                            <el-menu-item index="1-4-1">item one</el-menu-item>
+                        </el-submenu>
+                    </el-submenu>
+                    <el-menu-item index="2">
+                        <i class="el-icon-menu"></i>
+                        <span slot="title">Navigator Two</span>
+                    </el-menu-item>
+                    <el-menu-item index="3">
+                        <i class="el-icon-setting"></i>
+                        <span slot="title">Navigator Three</span>
+                    </el-menu-item>
+                </el-menu>
             </el-aside>
+        </transition>
+
+        <el-container direction="vertical">
+            <el-header style="text-align: left; font-size: 12px">
+                <i class="el-icon-menu" style="font-size: 40px;" @click="toggleMenu"></i>
+            </el-header>
             <el-main>
                 <el-row :gutter="10">
                     <el-col :xs="12" :sm="6" :md="4" :lg="3" :xl="1">
@@ -49,10 +103,10 @@ export default class C extends Vue {
                     </el-col>
                 </el-row>
             </el-main>
+            <el-footer>
+                <center>this is my footer</center>
+            </el-footer>
         </el-container>
-        <el-footer>
-            <center>this is my footer</center>
-        </el-footer>
     </el-container>
 </template>
 
@@ -60,18 +114,25 @@ export default class C extends Vue {
 .el-container {
     position: relative;
 }
+
+.el-aside.menu {
+    transition: all 0.3s;
+    overflow: visible;
+
+    .el-menu {
+        transition: all 0.3s;
+        // width: 100%;
+    }
+
+    .el-menu-item i {
+        line-height: 56px;
+    }
+}
+
 .el-container .el-aside {
     margin-left: 0;
 }
-.fade-enter-active,
-.fade-leave-active {
-    transition: all 0.5s;
-}
-.fade-enter,
-.fade-leave-to {
-    //   opacity: 0;
-    // margin-left: 0 !important;
-}
+
 body {
     margin: 0;
 }
