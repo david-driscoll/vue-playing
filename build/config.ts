@@ -19,8 +19,8 @@ export interface EntryConfig {
 
 export interface Config {
     environment: Environment;
-    browser: EntryConfig;
-    ssr: EntryConfig;
+    client: EntryConfig;
+    server: EntryConfig;
     sourceMap: boolean;
     devtool: Options.Devtool;
     index: string;
@@ -33,10 +33,10 @@ switch (environment) {
     case Environment.production:
         config = {
             environment,
-            browser: {
+            client: {
                 output: 'dist/browser',
             },
-            ssr: {
+            server: {
                 output: 'dist/ssr',
             },
             devtool: 'source-map',
@@ -50,13 +50,14 @@ switch (environment) {
     default:
         config = {
             environment,
-            browser: {
+            client: {
                 output: join(__dirname, '../server/wwwroot/js/'),
             },
-            ssr: {
+            server: {
                 output: join(__dirname, '../server/'),
             },
-            devtool: '#@inline-source-map',
+            devtool: 'source-map',
+            // devtool: '#@eval-source-map',
             index: 'index.html',
             sourceMap: true,
             assetsSubDirectory: 'assets',

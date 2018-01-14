@@ -12,7 +12,7 @@
         "experimentalDecorators": true,
         "preserveSymlinks": true,
         "forceConsistentCasingInFileNames": true,
-        "inlineSourceMap": true,
+        "sourceMap": true,
         "importHelpers": true,
         "noFallthroughCasesInSwitch": true,
         "noImplicitAny": true,

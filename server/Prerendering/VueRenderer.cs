@@ -102,7 +102,7 @@ namespace Microsoft.AspNetCore.SpaServices.Prerendering
             {
                 if (NodeScript == null)
                 {
-                    var script = EmbeddedResourceReader.Read(typeof(Prerenderer), "/Content/Node/ssr.js");
+                    var script = EmbeddedResourceReader.Read(typeof(Prerenderer), "/Content/Node/prerenderer.js");
                     NodeScript = new StringAsTempFile(script, applicationStoppingToken); // Will be cleaned up on process exit
                 }
             }

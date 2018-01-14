@@ -4,16 +4,17 @@ import * as FriendlyErrorsPlugin from 'friendly-errors-webpack-plugin';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as OptimizeCSSPlugin from 'optimize-css-assets-webpack-plugin';
 import { posix, resolve } from 'path';
-import * as UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import * as UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 import * as webpack from 'webpack';
 import config, { Environment } from './build/config';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 const isProduction = config.environment === Environment.production;
 const isDevelopment = config.environment === Environment.development;
 console.log({ isProduction, isDevelopment });
 
 const extractSass = new ExtractTextPlugin({
-    filename: isProduction ? '[name].[contenthash].css' : '[name].css',
+    filename: isProduction ? '[name].[contenthash:6].css' : '[name].css',
     disable: !isProduction,
 });
 
@@ -116,10 +117,8 @@ function assetsPath(path: string) {
 const webpackConfig = {
     output: {
         pathinfo: true,
-        filename: isProduction ? '[name].[contenthash].js' : '[name].js',
-        chunkFilename: isProduction
-            ? '[name].[contenthash].bundle.js'
-            : '[name].bundle.js',
+        filename: isProduction ? '[name].[hash:6].js' : '[name].js',
+        chunkFilename: isProduction ? '[name].[hash:6].bundle.js' : '[name].bundle.js',
     },
     module: {
         rules: [
@@ -192,22 +191,21 @@ const webpackConfig = {
         ],
     },
     plugins: [
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: `"${config.environment}"`,
-            },
-        }),
         extractSass,
         new FriendlyErrorsPlugin(),
+        new BundleAnalyzerPlugin({
+            analyzerMode: 'static',
+            openAnalyzer: false,
+            generateStatsFile: true,
+        }),
     ],
     resolve: {
         extensions: ['.ts', '.tsx', '.vue', '.js', '.jsx', '.json', '.css', '.scss'],
     },
     performance: {
-        hints: 'warning',
+        hints: isProduction ? 'warning' : false,
     },
-    // devtool: config.devtool,
-    // devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
+    devtool: config.devtool,
     stats: {
         colors: true,
         // assets: true,
@@ -231,7 +229,7 @@ const webpackConfig = {
         // timings: true,
         // usedExports: true,
         // version: true,
-        // warnings: true,
+        // warnings: isProduction,
     },
     // profile: true,
     // cache: true,
@@ -239,54 +237,48 @@ const webpackConfig = {
 
 module.exports = webpackConfig;
 
-// if (isDevelopment) {
-//     webpackConfig.plugins!.push(
-//         new webpack.HotModuleReplacementPlugin(),
-//         new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
-//         new webpack.NoEmitOnErrorsPlugin(),
-//         new HtmlWebpackPlugin({
-//             filename: 'index.html',
-//             template: 'index.html',
-//             inject: true,
-//         })
-//     );
-// }
-// if (isProduction) {
-//     webpackConfig.plugins!.push(
-//         new UglifyJsPlugin({
-//             uglifyOptions: {
-//                 compress: {
-//                     warnings: false,
-//                 },
-//             },
-//             sourceMap: config.sourceMap,
-//             parallel: true,
-//         }),
-//         // Compress extracted CSS. We are using this plugin so that possible
-//         // duplicated CSS from different components can be deduped.
-//         new OptimizeCSSPlugin({
-//             cssProcessorOptions: { safe: true, map: { inline: false } },
-//         }),
-//         // generate dist index.html with correct asset hash for caching.
-//         // you can customize output by editing /index.html
-//         // see https://github.com/ampedandwired/html-webpack-plugin
-//         new HtmlWebpackPlugin({
-//             filename: 'index.html',
-//             template: 'index.html',
-//             inject: true,
-//             minify: {
-//                 removeComments: true,
-//                 collapseWhitespace: true,
-//                 removeAttributeQuotes: true,
-//                 // more options:
-//                 // https://github.com/kangax/html-minifier#options-quick-reference
-//             },
-//             // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-//             chunksSortMode: 'dependency',
-//         }),
-//         // keep module.id stable when vendor modules does not change
-//         new webpack.HashedModuleIdsPlugin(),
-//         // enable scope hoisting
-//         new webpack.optimize.ModuleConcatenationPlugin()
-//     );
-// }
+if (isDevelopment) {
+    webpackConfig.plugins!.push(
+        new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
+        new webpack.NoEmitOnErrorsPlugin(),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'index.html',
+            inject: false,
+        })
+    );
+}
+if (isProduction) {
+    webpackConfig.plugins!.push(
+        new UglifyJSPlugin({
+            // parallel: true,
+            sourceMap: true,
+        }),
+        // Compress extracted CSS. We are using this plugin so that possible
+        // duplicated CSS from different components can be deduped.
+        new OptimizeCSSPlugin({
+            cssProcessorOptions: { safe: true, map: { inline: false } },
+        }),
+        // generate dist index.html with correct asset hash for caching.
+        // you can customize output by editing /index.html
+        // see https://github.com/ampedandwired/html-webpack-plugin
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'index.html',
+            inject: false,
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeAttributeQuotes: true,
+                // more options:
+                // https://github.com/kangax/html-minifier#options-quick-reference
+            },
+            // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+            chunksSortMode: 'dependency',
+        }),
+        // keep module.id stable when vendor modules does not change
+        new webpack.HashedModuleIdsPlugin()
+        // enable scope hoisting
+        // new webpack.optimize.ModuleConcatenationPlugin()
+    );
+}
