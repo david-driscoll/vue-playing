@@ -1,8 +1,8 @@
 import axios from './axios-rx';
 import Component from './Component.vue';
 import './element-variables.scss';
+import rxios from './rxios';
 import { Vue } from './vue';
-
 
 // export const app = new Vue({
 //     el: '#app',
@@ -21,6 +21,7 @@ export function createApp() {
         render: h => h(Component), // + "<div>Hello World 123456789</div>"
         registerServices(container) {
             container.registerInstance('axios', axios);
+            container.registerInstance('rxios', rxios);
         },
     });
 

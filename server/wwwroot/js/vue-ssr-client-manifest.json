@@ -5,18 +5,18 @@
     "vendor.js",
     "client.js",
     "manifest.js",
-    "1.2347a9cc3a74671d583e.hot-update.js",
-    "2347a9cc3a74671d583e.hot-update.json",
+    "1.1d05c1811c8030bce168.hot-update.js",
+    "1d05c1811c8030bce168.hot-update.json",
     "vendor.js.map",
     "client.js.map",
-    "1.2347a9cc3a74671d583e.hot-update.js.map",
+    "1.1d05c1811c8030bce168.hot-update.js.map",
     "manifest.js.map"
   ],
   "initial": [
     "manifest.js",
     "vendor.js",
     "client.js",
-    "1.2347a9cc3a74671d583e.hot-update.js"
+    "1.1d05c1811c8030bce168.hot-update.js"
   ],
   "async": [],
   "modules": {
@@ -65,6 +65,12 @@
       8
     ],
     "88e1af16": [
+      2,
+      4,
+      7,
+      8
+    ],
+    "2f5687ef": [
       2,
       4,
       7,
@@ -596,17 +602,6 @@
       6,
       0
     ],
-    "3dc0a257": [
-      1,
-      6,
-      0
-    ],
-    "29daaf6f": [
-      2,
-      4,
-      7,
-      8
-    ],
     "7f470740": [
       1,
       6,
@@ -682,6 +677,11 @@
       6,
       0
     ],
+    "3dc0a257": [
+      1,
+      6,
+      0
+    ],
     "6d8927ab": [
       1,
       6,
@@ -748,6 +748,17 @@
       1,
       6,
       0
+    ],
+    "57bb78b2": [
+      1,
+      6,
+      0
+    ],
+    "29daaf6f": [
+      2,
+      4,
+      7,
+      8
     ],
     "0be115d2": [
       1,
@@ -884,11 +895,6 @@
       6,
       0
     ],
-    "57bb78b2": [
-      1,
-      6,
-      0
-    ],
     "bc15f816": [
       1,
       6,
@@ -985,6 +991,11 @@
       0
     ],
     "e30d1734": [
+      1,
+      6,
+      0
+    ],
+    "33994fdb": [
       1,
       6,
       0

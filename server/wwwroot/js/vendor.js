@@ -49566,6 +49566,24 @@ function flattenUnsubscriptionErrors(errors) {
 
 /***/ }),
 
+/***/ "./node_modules/rxjs/operator/toPromise.js":
+/*!*************************************************!*\
+  !*** ./node_modules/rxjs/operator/toPromise.js ***!
+  \*************************************************/
+/*! dynamic exports provided */
+/*! exports used: toPromise */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(/*! ../Observable */ "./node_modules/rxjs/Observable.js");
+// HACK: this is here for backward compatability
+// TODO(benlesh): remove this in v6.
+exports.toPromise = Observable_1.Observable.prototype.toPromise;
+//# sourceMappingURL=toPromise.js.map
+
+/***/ }),
+
 /***/ "./node_modules/rxjs/symbol/observable.js":
 /*!************************************************!*\
   !*** ./node_modules/rxjs/symbol/observable.js ***!

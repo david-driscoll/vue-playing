@@ -1,42 +1,22 @@
 import axios, {
+    AxiosError,
     AxiosInstance,
+    AxiosInterceptorManager,
     AxiosPromise,
     AxiosRequestConfig,
     AxiosResponse,
 } from 'axios';
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
+import { toPromise } from 'rxjs/operator/toPromise';
+import { Subscriber } from 'rxjs/Subscriber';
+import { TeardownLogic } from 'rxjs/Subscription';
+import { AxiosObservable, rxiosRequest } from './rxios';
 const Axios = (axios as any).Axios;
 
-function complete<T>(promise: AxiosPromise<T>, observer: Observer<AxiosResponse<T>>) {
-    promise.then(
-        response => {
-            observer.next(response);
-            observer.complete();
-        },
-        failure => {
-            if (axios.isCancel(failure)) {
-                observer.complete();
-            } else {
-                observer.error(failure);
-            }
-        }
-    );
-}
+const axiosRequest = Axios.prototype.request;
 
-(axios as any).request$ = Axios.prototype.request$ = function<T = any>(
-    this: AxiosInstance,
-    config: AxiosRequestConfig
-): AxiosObservable<T> {
-    return new Observable<AxiosResponse<T>>(observer => {
-        const source = axios.CancelToken.source();
-        const cancelToken = source.token;
-
-        complete(this.request({ ...config, cancelToken }), observer);
-
-        return () => source.cancel();
-    });
-};
+(axios as any).request$ = Axios.prototype.request$ = rxiosRequest;
 
 // Provide aliases for supported request methods
 ['delete', 'get', 'head', 'options'].forEach(method => {
@@ -67,9 +47,6 @@ function complete<T>(promise: AxiosPromise<T>, observer: Observer<AxiosResponse<
     };
 });
 
-export default axios;
-export interface AxiosObservable<T = void> extends Observable<AxiosResponse<T>> {}
-
 declare module 'axios' {
     interface AxiosInstance {
         request$<T = any>(config: AxiosRequestConfig): AxiosObservable<T>;
@@ -94,3 +71,5 @@ declare module 'axios' {
         ): AxiosObservable<T>;
     }
 }
+
+export default axios;

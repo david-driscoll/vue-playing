@@ -1,4 +1,9 @@
-import axios, { AxiosAdapter, AxiosRequestConfig } from 'axios';
+import axios, {
+    AxiosAdapter,
+    AxiosInstance,
+    AxiosRequestConfig,
+    AxiosResponse,
+} from 'axios';
 import { expect } from 'chai';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Observable';
@@ -8,7 +13,7 @@ import * as sinon from 'sinon';
 import '../../client/axios-rx';
 
 describe('axios-rx', () => {
-    it('should call the request as expected', () => {
+    it('should call the request as expected', done => {
         const spy = sinon.spy<AxiosAdapter>(async config => {
             return {
                 data: 'somevalue',
@@ -27,6 +32,7 @@ describe('axios-rx', () => {
             spy.should.not.have.been.calledTwice;
             spy.should.have.been.calledWithMatch(request);
             response.data.should.equal('somevalue');
+            done();
         });
     });
 
@@ -46,7 +52,23 @@ describe('axios-rx', () => {
         spy.should.not.be.called;
     });
 
-    it('should call multiple times for multiple subscribes (for retry)', () => {
+    it('requests should be awaitable', async () => {
+        const spy = sinon.spy<AxiosAdapter>(async config => {
+            return {
+                data: 'somevalue',
+                status: 1337,
+                statusText: 'oh yeah!',
+                headers: { Accept: 'awesomeness' },
+                config,
+            };
+        });
+        const instance = axios.create({ adapter: spy });
+
+        await instance.request$({ method: 'get', url: 'http://awesome.me' });
+        spy.should.be.called;
+    });
+
+    it('should call multiple times for multiple subscribes (for retry)', done => {
         const spy = sinon.spy<AxiosAdapter>(async config => {
             return {
                 data: 'somevalue',
@@ -64,7 +86,26 @@ describe('axios-rx', () => {
             instance.request$({ method: 'get', url: 'http://awesome.me' })
         ).subscribe(c => {
             spy.should.have.been.calledThrice;
+            done();
         });
+    });
+
+    it('should call multiple times for multiple awaits', async () => {
+        const spy = sinon.spy<AxiosAdapter>(async config => {
+            return {
+                data: 'somevalue',
+                status: 1337,
+                statusText: 'oh yeah!',
+                headers: { Accept: 'awesomeness' },
+                config,
+            };
+        });
+        const instance = axios.create({ adapter: spy });
+
+        await instance.request$({ method: 'get', url: 'http://awesome.me' });
+        await instance.request$({ method: 'get', url: 'http://awesome.me' });
+        await instance.request$({ method: 'get', url: 'http://awesome.me' });
+        spy.should.have.been.calledThrice;
     });
 
     it('should cancel the call when unsubscribed', () => {
@@ -99,4 +140,57 @@ describe('axios-rx', () => {
         expect(instance.head$).to.be.instanceOf(Function);
         expect(instance.options$).to.be.instanceOf(Function);
     });
+
+    // Provide aliases for supported request methods
+    (['delete', 'get', 'head', 'options'] as Array<keyof AxiosInstance>).forEach(
+        (method: keyof AxiosInstance) => {
+            it(`${method} should work as expected`, done => {
+                const spy = sinon.spy<AxiosAdapter>(async config => {
+                    return {
+                        data: 'somevalue',
+                        status: 1337,
+                        statusText: 'oh yeah!',
+                        headers: { Accept: 'awesomeness' },
+                        config,
+                    };
+                });
+                const instance = axios.create({ adapter: spy });
+
+                (instance as any)
+                    [method + '$']('http://awesome.me', {})
+                    .subscribe((response: AxiosResponse<any>) => {
+                        spy.should.have.been.calledOnce;
+                        spy.should.not.have.been.calledTwice;
+                        response.data.should.equal('somevalue');
+                        done();
+                    });
+            });
+        }
+    );
+
+    (['post', 'put', 'patch'] as Array<keyof AxiosInstance>).forEach(
+        (method: keyof AxiosInstance) => {
+            it(`${method} should work as expected`, done => {
+                const spy = sinon.spy<AxiosAdapter>(async config => {
+                    return {
+                        data: 'somevalue',
+                        status: 1337,
+                        statusText: 'oh yeah!',
+                        headers: { Accept: 'awesomeness' },
+                        config,
+                    };
+                });
+                const instance = axios.create({ adapter: spy });
+
+                (instance as any)
+                    [method + '$']('http://awesome.me', {})
+                    .subscribe((response: AxiosResponse<any>) => {
+                        spy.should.have.been.calledOnce;
+                        spy.should.not.have.been.calledTwice;
+                        response.data.should.equal('somevalue');
+                        done();
+                    });
+            });
+        }
+    );
 });
