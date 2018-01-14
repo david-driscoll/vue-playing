@@ -6,12 +6,7 @@ import axios, {
     AxiosRequestConfig,
     AxiosResponse,
 } from 'axios';
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
-import { toPromise } from 'rxjs/operator/toPromise';
-import { Subscriber } from 'rxjs/Subscriber';
-import { TeardownLogic } from 'rxjs/Subscription';
-import { AxiosObservable, rxiosRequest } from './rxios';
+import { AxiosObservable, rxiosRequest } from 'axios-rx';
 const Axios = (axios as any).Axios;
 
 const axiosRequest = Axios.prototype.request;

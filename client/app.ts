@@ -1,7 +1,7 @@
+import rxios from 'axios-rx';
 import axios from './axios-rx';
 import Component from './Component.vue';
 import './element-variables.scss';
-import rxios from './rxios';
 import { Vue } from './vue';
 
 // export const app = new Vue({
@@ -20,8 +20,8 @@ export function createApp() {
         // the root instance simply renders the App component.
         render: h => h(Component), // + "<div>Hello World 123456789</div>"
         registerServices(container) {
-            container.registerInstance('axios', axios);
-            container.registerInstance('rxios', rxios);
+            container.registerInstance('axios', axios.create({}));
+            container.registerInstance('rxios', rxios.create({}));
         },
     });
 

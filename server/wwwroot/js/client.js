@@ -72,11 +72,11 @@ if (true) {(function () {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = createApp;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__axios_rx__ = __webpack_require__(/*! ./axios-rx */ "./client/axios-rx.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Component_vue__ = __webpack_require__(/*! ./Component.vue */ "./client/Component.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__element_variables_scss__ = __webpack_require__(/*! ./element-variables.scss */ "./client/element-variables.scss");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__element_variables_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__element_variables_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rxios__ = __webpack_require__(/*! ./rxios */ "./client/rxios.ts");
+throw new Error("Cannot find module \"axios-rx\"");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__axios_rx__ = __webpack_require__(/*! ./axios-rx */ "./client/axios-rx.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Component_vue__ = __webpack_require__(/*! ./Component.vue */ "./client/Component.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__element_variables_scss__ = __webpack_require__(/*! ./element-variables.scss */ "./client/element-variables.scss");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__element_variables_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__element_variables_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vue__ = __webpack_require__(/*! ./vue */ "./client/vue.ts");
 
 
@@ -96,15 +96,15 @@ function createApp() {
     __WEBPACK_IMPORTED_MODULE_4__vue__["a" /* Vue */].extend({});
     var app = new __WEBPACK_IMPORTED_MODULE_4__vue__["a" /* Vue */]({
         // the root instance simply renders the App component.
-        render: function (h) { return h(__WEBPACK_IMPORTED_MODULE_1__Component_vue__["a" /* default */]); },
+        render: function (h) { return h(__WEBPACK_IMPORTED_MODULE_2__Component_vue__["a" /* default */]); },
         registerServices: function (container) {
-            container.registerInstance('axios', __WEBPACK_IMPORTED_MODULE_0__axios_rx__["a" /* default */]);
-            container.registerInstance('rxios', __WEBPACK_IMPORTED_MODULE_3__rxios__["a" /* default */]);
+            container.registerInstance('axios', __WEBPACK_IMPORTED_MODULE_1__axios_rx__["a" /* default */].create({}));
+            container.registerInstance('rxios', __WEBPACK_IMPORTED_MODULE_0_axios_rx___default.a.create({}));
         },
     });
     return { app: app };
 }
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYXBwLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sS0FBSyxNQUFNLFlBQVksQ0FBQztBQUMvQixPQUFPLFNBQVMsTUFBTSxpQkFBaUIsQ0FBQztBQUN4QyxPQUFPLDBCQUEwQixDQUFDO0FBQ2xDLE9BQU8sS0FBSyxNQUFNLFNBQVMsQ0FBQztBQUM1QixPQUFPLEVBQUUsR0FBRyxFQUFFLE1BQU0sT0FBTyxDQUFDO0FBRTVCLCtCQUErQjtBQUMvQixrQkFBa0I7QUFDbEIsd0RBQXdEO0FBQ3hELG9CQUFvQjtBQUNwQixZQUFZO0FBQ1osUUFBUTtBQUNSLE1BQU07QUFFTixxRUFBcUU7QUFDckUsWUFBWTtBQUNaLE1BQU07SUFDRixHQUFHLENBQUMsTUFBTSxDQUFDLEVBQUUsQ0FBQyxDQUFDO0lBQ2YsSUFBTSxHQUFHLEdBQUcsSUFBSSxHQUFHLENBQUM7UUFDaEIsc0RBQXNEO1FBQ3RELE1BQU0sRUFBRSxVQUFBLENBQUMsSUFBSSxPQUFBLENBQUMsQ0FBQyxTQUFTLENBQUMsRUFBWixDQUFZO1FBQ3pCLGdCQUFnQixZQUFDLFNBQVM7WUFDdEIsU0FBUyxDQUFDLGdCQUFnQixDQUFDLE9BQU8sRUFBRSxLQUFLLENBQUMsQ0FBQztZQUMzQyxTQUFTLENBQUMsZ0JBQWdCLENBQUMsT0FBTyxFQUFFLEtBQUssQ0FBQyxDQUFDO1FBQy9DLENBQUM7S0FDSixDQUFDLENBQUM7SUFFSCxNQUFNLENBQUMsRUFBRSxHQUFHLEtBQUEsRUFBRSxDQUFDO0FBQ25CLENBQUMifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYXBwLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sS0FBSyxNQUFNLFVBQVUsQ0FBQztBQUM3QixPQUFPLEtBQUssTUFBTSxZQUFZLENBQUM7QUFDL0IsT0FBTyxTQUFTLE1BQU0saUJBQWlCLENBQUM7QUFDeEMsT0FBTywwQkFBMEIsQ0FBQztBQUNsQyxPQUFPLEVBQUUsR0FBRyxFQUFFLE1BQU0sT0FBTyxDQUFDO0FBRTVCLCtCQUErQjtBQUMvQixrQkFBa0I7QUFDbEIsd0RBQXdEO0FBQ3hELG9CQUFvQjtBQUNwQixZQUFZO0FBQ1osUUFBUTtBQUNSLE1BQU07QUFFTixxRUFBcUU7QUFDckUsWUFBWTtBQUNaLE1BQU07SUFDRixHQUFHLENBQUMsTUFBTSxDQUFDLEVBQUUsQ0FBQyxDQUFDO0lBQ2YsSUFBTSxHQUFHLEdBQUcsSUFBSSxHQUFHLENBQUM7UUFDaEIsc0RBQXNEO1FBQ3RELE1BQU0sRUFBRSxVQUFBLENBQUMsSUFBSSxPQUFBLENBQUMsQ0FBQyxTQUFTLENBQUMsRUFBWixDQUFZO1FBQ3pCLGdCQUFnQixZQUFDLFNBQVM7WUFDdEIsU0FBUyxDQUFDLGdCQUFnQixDQUFDLE9BQU8sRUFBRSxLQUFLLENBQUMsTUFBTSxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUM7WUFDdEQsU0FBUyxDQUFDLGdCQUFnQixDQUFDLE9BQU8sRUFBRSxLQUFLLENBQUMsTUFBTSxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUM7UUFDMUQsQ0FBQztLQUNKLENBQUMsQ0FBQztJQUVILE1BQU0sQ0FBQyxFQUFFLEdBQUcsS0FBQSxFQUFFLENBQUM7QUFDbkIsQ0FBQyJ9
 
 /***/ }),
 
@@ -120,13 +120,13 @@ function createApp() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rxios__ = __webpack_require__(/*! ./rxios */ "./client/rxios.ts");
+throw new Error("Cannot find module \"axios-rx\"");
 
 
 
 var Axios = __WEBPACK_IMPORTED_MODULE_1_axios___default.a.Axios;
 var axiosRequest = Axios.prototype.request;
-__WEBPACK_IMPORTED_MODULE_1_axios___default.a.request$ = Axios.prototype.request$ = __WEBPACK_IMPORTED_MODULE_2__rxios__["b" /* rxiosRequest */];
+__WEBPACK_IMPORTED_MODULE_1_axios___default.a.request$ = Axios.prototype.request$ = __WEBPACK_IMPORTED_MODULE_2_axios_rx__["rxiosRequest"];
 // Provide aliases for supported request methods
 ['delete', 'get', 'head', 'options'].forEach(function (method) {
     __WEBPACK_IMPORTED_MODULE_1_axios___default.a[method + "$"] = Axios.prototype[method + "$"] = function (url, config) {
@@ -143,7 +143,7 @@ __WEBPACK_IMPORTED_MODULE_1_axios___default.a.request$ = Axios.prototype.request
     };
 });
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_1_axios___default.a);
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXhpb3MtcnguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJheGlvcy1yeC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsT0FBTyxLQU9OLE1BQU0sT0FBTyxDQUFDO0FBTWYsT0FBTyxFQUFtQixZQUFZLEVBQUUsTUFBTSxTQUFTLENBQUM7QUFDeEQsSUFBTSxLQUFLLEdBQUksS0FBYSxDQUFDLEtBQUssQ0FBQztBQUVuQyxJQUFNLFlBQVksR0FBRyxLQUFLLENBQUMsU0FBUyxDQUFDLE9BQU8sQ0FBQztBQUU1QyxLQUFhLENBQUMsUUFBUSxHQUFHLEtBQUssQ0FBQyxTQUFTLENBQUMsUUFBUSxHQUFHLFlBQVksQ0FBQztBQUVsRSxnREFBZ0Q7QUFDaEQsQ0FBQyxRQUFRLEVBQUUsS0FBSyxFQUFFLE1BQU0sRUFBRSxTQUFTLENBQUMsQ0FBQyxPQUFPLENBQUMsVUFBQSxNQUFNO0lBQzlDLEtBQWEsQ0FBSSxNQUFNLE1BQUcsQ0FBQyxHQUFHLEtBQUssQ0FBQyxTQUFTLENBQUksTUFBTSxNQUFHLENBQUMsR0FBRyxVQUMzRCxHQUFXLEVBQ1gsTUFBZ0I7UUFBaEIsdUJBQUEsRUFBQSxXQUFnQjtRQUVoQixNQUFNLENBQUMsSUFBSSxDQUFDLFFBQVEsc0JBQ2IsTUFBTSxJQUNULE1BQU0sUUFBQTtZQUNOLEdBQUcsS0FBQSxJQUNMLENBQUM7SUFDUCxDQUFDLENBQUM7QUFDTixDQUFDLENBQUMsQ0FBQztBQUVILENBQUMsTUFBTSxFQUFFLEtBQUssRUFBRSxPQUFPLENBQUMsQ0FBQyxPQUFPLENBQUMsVUFBQSxNQUFNO0lBQ2xDLEtBQWEsQ0FBSSxNQUFNLE1BQUcsQ0FBQyxHQUFHLEtBQUssQ0FBQyxTQUFTLENBQUksTUFBTSxNQUFHLENBQUMsR0FBRyxVQUMzRCxHQUFXLEVBQ1gsSUFBUyxFQUNULE1BQVc7UUFFWCxNQUFNLENBQUMsSUFBSSxDQUFDLFFBQVEsc0JBQ2IsTUFBTSxJQUNULE1BQU0sUUFBQTtZQUNOLEdBQUcsS0FBQTtZQUNILElBQUksTUFBQSxJQUNOLENBQUM7SUFDUCxDQUFDLENBQUM7QUFDTixDQUFDLENBQUMsQ0FBQztBQTJCSCxlQUFlLEtBQUssQ0FBQyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXhpb3MtcnguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJheGlvcy1yeC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsT0FBTyxLQU9OLE1BQU0sT0FBTyxDQUFDO0FBQ2YsT0FBTyxFQUFtQixZQUFZLEVBQUUsTUFBTSxVQUFVLENBQUM7QUFDekQsSUFBTSxLQUFLLEdBQUksS0FBYSxDQUFDLEtBQUssQ0FBQztBQUVuQyxJQUFNLFlBQVksR0FBRyxLQUFLLENBQUMsU0FBUyxDQUFDLE9BQU8sQ0FBQztBQUU1QyxLQUFhLENBQUMsUUFBUSxHQUFHLEtBQUssQ0FBQyxTQUFTLENBQUMsUUFBUSxHQUFHLFlBQVksQ0FBQztBQUVsRSxnREFBZ0Q7QUFDaEQsQ0FBQyxRQUFRLEVBQUUsS0FBSyxFQUFFLE1BQU0sRUFBRSxTQUFTLENBQUMsQ0FBQyxPQUFPLENBQUMsVUFBQSxNQUFNO0lBQzlDLEtBQWEsQ0FBSSxNQUFNLE1BQUcsQ0FBQyxHQUFHLEtBQUssQ0FBQyxTQUFTLENBQUksTUFBTSxNQUFHLENBQUMsR0FBRyxVQUMzRCxHQUFXLEVBQ1gsTUFBZ0I7UUFBaEIsdUJBQUEsRUFBQSxXQUFnQjtRQUVoQixNQUFNLENBQUMsSUFBSSxDQUFDLFFBQVEsc0JBQ2IsTUFBTSxJQUNULE1BQU0sUUFBQTtZQUNOLEdBQUcsS0FBQSxJQUNMLENBQUM7SUFDUCxDQUFDLENBQUM7QUFDTixDQUFDLENBQUMsQ0FBQztBQUVILENBQUMsTUFBTSxFQUFFLEtBQUssRUFBRSxPQUFPLENBQUMsQ0FBQyxPQUFPLENBQUMsVUFBQSxNQUFNO0lBQ2xDLEtBQWEsQ0FBSSxNQUFNLE1BQUcsQ0FBQyxHQUFHLEtBQUssQ0FBQyxTQUFTLENBQUksTUFBTSxNQUFHLENBQUMsR0FBRyxVQUMzRCxHQUFXLEVBQ1gsSUFBUyxFQUNULE1BQVc7UUFFWCxNQUFNLENBQUMsSUFBSSxDQUFDLFFBQVEsc0JBQ2IsTUFBTSxJQUNULE1BQU0sUUFBQTtZQUNOLEdBQUcsS0FBQTtZQUNILElBQUksTUFBQSxJQUNOLENBQUM7SUFDUCxDQUFDLENBQUM7QUFDTixDQUFDLENBQUMsQ0FBQztBQTJCSCxlQUFlLEtBQUssQ0FBQyJ9
 
 /***/ }),
 
@@ -195,78 +195,6 @@ var app = Object(__WEBPACK_IMPORTED_MODULE_0__app__["a" /* createApp */])().app;
 // this assumes App.vue template root element has `id="app"`
 app.$mount('#app');
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnJvd3Nlci1lbnRyeS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImJyb3dzZXItZW50cnkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBRSxNQUFNLFFBQVEsQ0FBQztBQUVuQyx5Q0FBeUM7QUFFakMsSUFBQSxxQkFBRyxDQUFpQjtBQUU1Qiw0REFBNEQ7QUFDNUQsR0FBRyxDQUFDLE1BQU0sQ0FBQyxNQUFNLENBQUMsQ0FBQyJ9
-
-/***/ }),
-
-/***/ "./client/rxios.ts":
-/*!*************************!*\
-  !*** ./client/rxios.ts ***!
-  \*************************/
-/*! exports provided: AxiosObservable, rxiosRequest, default */
-/*! exports used: default, rxiosRequest */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export AxiosObservable */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return rxiosRequest; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(/*! rxjs/Observable */ "./node_modules/rxjs/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_toPromise__ = __webpack_require__(/*! rxjs/operator/toPromise */ "./node_modules/rxjs/operator/toPromise.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_toPromise__);
-
-
-
-
-var Axios = __WEBPACK_IMPORTED_MODULE_1_axios___default.a.Axios;
-var AxiosObservable = /** @class */ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __extends */](AxiosObservable, _super);
-    function AxiosObservable(subscribe) {
-        return _super.call(this, subscribe) || this;
-    }
-    AxiosObservable.prototype.then = function (onfulfilled, onrejected) {
-        return __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_toPromise__["toPromise"].call(this, Promise).then(onfulfilled, onrejected);
-    };
-    return AxiosObservable;
-}(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"]));
-
-function complete(promise, observer) {
-    promise.then(function (response) {
-        observer.next(response);
-        observer.complete();
-    }, function (failure) {
-        if (__WEBPACK_IMPORTED_MODULE_1_axios___default.a.isCancel(failure)) {
-            observer.complete();
-        }
-        else {
-            observer.error(failure);
-        }
-    });
-}
-var axiosRequest = Axios.prototype.request;
-var rxiosRequest = function (config) {
-    var _this = this;
-    return new AxiosObservable(function (observer) {
-        var source = __WEBPACK_IMPORTED_MODULE_1_axios___default.a.CancelToken.source();
-        var cancelToken = source.token;
-        complete(axiosRequest.call(_this, __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, config, { cancelToken: cancelToken })), observer);
-        return function () { return source.cancel(); };
-    });
-};
-function Rxios(instanceConfig) {
-    Axios.call(this, instanceConfig);
-}
-Object.assign(Rxios.prototype, Axios.prototype);
-Rxios.prototype.request = rxiosRequest;
-function rxios(configOrUrl, config) {
-    return rxiosRequest.call(__WEBPACK_IMPORTED_MODULE_1_axios___default.a, configOrUrl, config);
-}
-Object.assign(rxios, Rxios.prototype);
-rxios.create = function (config) { return new Rxios(config || {}); };
-/* harmony default export */ __webpack_exports__["a"] = (rxios);
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicnhpb3MuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJyeGlvcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsT0FBTyxLQU9OLE1BQU0sT0FBTyxDQUFDO0FBQ2YsT0FBTyxFQUFFLFVBQVUsRUFBRSxNQUFNLGlCQUFpQixDQUFDO0FBRTdDLE9BQU8sRUFBRSxTQUFTLEVBQUUsTUFBTSx5QkFBeUIsQ0FBQztBQUdwRCxJQUFNLEtBQUssR0FBSSxLQUFhLENBQUMsS0FBSyxDQUFDO0FBb0NuQztJQUFxRSwyQ0FBYTtJQUM5RSx5QkFDSSxTQUE2RTtlQUU3RSxrQkFBTSxTQUFTLENBQUM7SUFDcEIsQ0FBQztJQUVELDhCQUFJLEdBQUosVUFDSSxXQUFtRSxFQUNuRSxVQUdVO1FBRVYsTUFBTSxDQUFFLFNBQVMsQ0FBQyxJQUFJLENBQUMsSUFBSSxFQUFFLE9BQU8sQ0FBb0IsQ0FBQyxJQUFJLENBQ3pELFdBQVcsRUFDWCxVQUFVLENBQ2IsQ0FBQztJQUNOLENBQUM7SUFDTCxzQkFBQztBQUFELENBQUMsQUFuQkQsQ0FBcUUsVUFBVSxHQW1COUU7O0FBRUQsa0JBQXFCLE9BQXdCLEVBQUUsUUFBb0M7SUFDL0UsT0FBTyxDQUFDLElBQUksQ0FDUixVQUFBLFFBQVE7UUFDSixRQUFRLENBQUMsSUFBSSxDQUFDLFFBQVEsQ0FBQyxDQUFDO1FBQ3hCLFFBQVEsQ0FBQyxRQUFRLEVBQUUsQ0FBQztJQUN4QixDQUFDLEVBQ0QsVUFBQSxPQUFPO1FBQ0gsRUFBRSxDQUFDLENBQUMsS0FBSyxDQUFDLFFBQVEsQ0FBQyxPQUFPLENBQUMsQ0FBQyxDQUFDLENBQUM7WUFDMUIsUUFBUSxDQUFDLFFBQVEsRUFBRSxDQUFDO1FBQ3hCLENBQUM7UUFBQyxJQUFJLENBQUMsQ0FBQztZQUNKLFFBQVEsQ0FBQyxLQUFLLENBQUMsT0FBTyxDQUFDLENBQUM7UUFDNUIsQ0FBQztJQUNMLENBQUMsQ0FDSixDQUFDO0FBQ04sQ0FBQztBQUVELElBQU0sWUFBWSxHQUFHLEtBQUssQ0FBQyxTQUFTLENBQUMsT0FBTyxDQUFDO0FBRTdDLE1BQU0sQ0FBQyxJQUFNLFlBQVksR0FBRyxVQUV4QixNQUEwQjtJQUZGLGlCQVkzQjtJQVJHLE1BQU0sQ0FBQyxJQUFJLGVBQWUsQ0FBSSxVQUFBLFFBQVE7UUFDbEMsSUFBTSxNQUFNLEdBQUcsS0FBSyxDQUFDLFdBQVcsQ0FBQyxNQUFNLEVBQUUsQ0FBQztRQUMxQyxJQUFNLFdBQVcsR0FBRyxNQUFNLENBQUMsS0FBSyxDQUFDO1FBRWpDLFFBQVEsQ0FBQyxZQUFZLENBQUMsSUFBSSxDQUFDLEtBQUksdUJBQU8sTUFBTSxJQUFFLFdBQVcsYUFBQSxJQUFHLEVBQUUsUUFBUSxDQUFDLENBQUM7UUFFeEUsTUFBTSxDQUFDLGNBQU0sT0FBQSxNQUFNLENBQUMsTUFBTSxFQUFFLEVBQWYsQ0FBZSxDQUFDO0lBQ2pDLENBQUMsQ0FBQyxDQUFDO0FBQ1AsQ0FBQyxDQUFDO0FBRUYsZUFBbUMsY0FBa0M7SUFDakUsS0FBSyxDQUFDLElBQUksQ0FBQyxJQUFJLEVBQUUsY0FBYyxDQUFDLENBQUM7QUFDckMsQ0FBQztBQUVELE1BQU0sQ0FBQyxNQUFNLENBQUMsS0FBSyxDQUFDLFNBQVMsRUFBRSxLQUFLLENBQUMsU0FBUyxDQUFDLENBQUM7QUFDaEQsS0FBSyxDQUFDLFNBQVMsQ0FBQyxPQUFPLEdBQUcsWUFBWSxDQUFDO0FBSXZDLGVBQ0ksV0FBd0MsRUFDeEMsTUFBMkI7SUFFM0IsTUFBTSxDQUFDLFlBQVksQ0FBQyxJQUFJLENBQUMsS0FBSyxFQUFFLFdBQVcsRUFBRSxNQUFNLENBQUMsQ0FBQztBQUN6RCxDQUFDO0FBRUQsTUFBTSxDQUFDLE1BQU0sQ0FBQyxLQUFLLEVBQUUsS0FBSyxDQUFDLFNBQVMsQ0FBQyxDQUFDO0FBQ3JDLEtBQWEsQ0FBQyxNQUFNLEdBQUcsVUFBQyxNQUEyQixJQUFLLE9BQUEsSUFBSyxLQUFhLENBQUMsTUFBTSxJQUFJLEVBQUUsQ0FBQyxFQUFoQyxDQUFnQyxDQUFDO0FBRTFGLGVBQWUsS0FBb0IsQ0FBQyJ9
 
 /***/ }),
 

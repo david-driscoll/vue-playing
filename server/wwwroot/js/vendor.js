@@ -49566,24 +49566,6 @@ function flattenUnsubscriptionErrors(errors) {
 
 /***/ }),
 
-/***/ "./node_modules/rxjs/operator/toPromise.js":
-/*!*************************************************!*\
-  !*** ./node_modules/rxjs/operator/toPromise.js ***!
-  \*************************************************/
-/*! dynamic exports provided */
-/*! exports used: toPromise */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(/*! ../Observable */ "./node_modules/rxjs/Observable.js");
-// HACK: this is here for backward compatability
-// TODO(benlesh): remove this in v6.
-exports.toPromise = Observable_1.Observable.prototype.toPromise;
-//# sourceMappingURL=toPromise.js.map
-
-/***/ }),
-
 /***/ "./node_modules/rxjs/symbol/observable.js":
 /*!************************************************!*\
   !*** ./node_modules/rxjs/symbol/observable.js ***!
@@ -51322,7 +51304,7 @@ protocol.create = function (name, initialOptions) {
  * Decorator: Indicates that the decorated class/object is a custom resolver.
  */
 // tslint:disable-next-line:only-arrow-functions
-var resolver = protocol.create('aurelia:resolver', function (target) {
+var containerResolver = protocol.create('aurelia:resolver', function (target) {
     if (!(typeof target.get === 'function')) {
         return 'Resolvers must implement: get(container: Container, key: Key): any';
     }
@@ -51377,7 +51359,7 @@ var StrategyResolver = /** @class */ (function () {
         }
     };
     StrategyResolver = __decorate([
-        resolver,
+        containerResolver,
         __metadata("design:paramtypes", [Number, Object])
     ], StrategyResolver);
     return StrategyResolver;
@@ -51778,20 +51760,20 @@ var Container = /** @class */ (function () {
      * @param resolver The resolver to use when the dependency is needed.
      * @return The resolver that was registered.
      */
-    Container.prototype.registerResolver = function (key, resolver$$1) {
+    Container.prototype.registerResolver = function (key, resolver) {
         validateKey(key);
         var allResolvers = this._resolvers;
         var result = allResolvers.get(key);
         if (result === undefined) {
-            allResolvers.set(key, resolver$$1);
+            allResolvers.set(key, resolver);
         }
         else if (result instanceof StrategyResolver && result.strategy === Strategy.Array) {
-            result.state.push(resolver$$1);
+            result.state.push(resolver);
         }
         else {
-            allResolvers.set(key, new StrategyResolver(Strategy.Array, [result, resolver$$1]));
+            allResolvers.set(key, new StrategyResolver(Strategy.Array, [result, resolver]));
         }
-        return resolver$$1;
+        return resolver;
     };
     Container.prototype.autoRegister = function (key, fn) {
         // tslint:disable-next-line:no-parameter-reassignment
@@ -51853,11 +51835,11 @@ var Container = /** @class */ (function () {
         if (key === Container) {
             return this;
         }
-        if (resolver.decorates(key)) {
+        if (containerResolver.decorates(key)) {
             return key.get(this, key);
         }
-        var resolver$$1 = this._resolvers.get(key);
-        if (resolver$$1 === undefined) {
+        var resolver = this._resolvers.get(key);
+        if (resolver === undefined) {
             if (this.parent == null) {
                 return this.autoRegister(key).get(this, key);
             }
@@ -51867,7 +51849,7 @@ var Container = /** @class */ (function () {
             }
             return registration.registerResolver(this, key, key).get(this, key);
         }
-        return resolver$$1.get(this, key);
+        return resolver.get(this, key);
     };
     /**
      * Resolves all instance registered under the provided key.
@@ -51876,15 +51858,15 @@ var Container = /** @class */ (function () {
      */
     Container.prototype.getAll = function (key) {
         validateKey(key);
-        var resolver$$1 = this._resolvers.get(key);
-        if (resolver$$1 === undefined) {
+        var resolver = this._resolvers.get(key);
+        if (resolver === undefined) {
             if (this.parent == null) {
                 return _emptyParameters;
             }
             return this.parent.getAll(key);
         }
-        if (resolver$$1 instanceof StrategyResolver && resolver$$1.strategy === Strategy.Array) {
-            var state = resolver$$1.state;
+        if (resolver instanceof StrategyResolver && resolver.strategy === Strategy.Array) {
+            var state = resolver.state;
             var i = state.length;
             var results = new Array(i);
             while (i--) {
@@ -51892,7 +51874,7 @@ var Container = /** @class */ (function () {
             }
             return results;
         }
-        return [resolver$$1.get(this, key)];
+        return [resolver.get(this, key)];
     };
     /**
      * Creates a new dependency injection container whose parent is the current container.
@@ -51942,14 +51924,14 @@ var Container = /** @class */ (function () {
         this.root = null;
     };
     Container.prototype._get = function (key) {
-        var resolver$$1 = this._resolvers.get(key);
-        if (resolver$$1 === undefined) {
+        var resolver = this._resolvers.get(key);
+        if (resolver === undefined) {
             if (this.parent == null) {
                 return this.autoRegister(key).get(this, key);
             }
             return this.parent._get(key);
         }
-        return resolver$$1.get(this, key);
+        return resolver.get(this, key);
     };
     Container.prototype._createInvocationHandler = function (fn) {
         var dependencies;
@@ -52010,7 +51992,7 @@ var AllResolver = /** @class */ (function () {
         return container.getAll(this._key);
     };
     AllResolver = AllResolver_1 = __decorate([
-        resolver,
+        containerResolver,
         __metadata("design:paramtypes", [Object])
     ], AllResolver);
     return AllResolver;
@@ -52154,7 +52136,7 @@ var FactoryResolver = /** @class */ (function () {
         };
     };
     FactoryResolver = FactoryResolver_1 = __decorate([
-        resolver,
+        containerResolver,
         __metadata("design:paramtypes", [Function])
     ], FactoryResolver);
     return FactoryResolver;
@@ -52205,7 +52187,7 @@ var LazyResolver = /** @class */ (function () {
         return function () { return container.get(_this._key); };
     };
     LazyResolver = LazyResolver_1 = __decorate([
-        resolver,
+        containerResolver,
         __metadata("design:paramtypes", [Object])
     ], LazyResolver);
     return LazyResolver;
@@ -52284,7 +52266,7 @@ var NewInstanceResolver = /** @class */ (function () {
         return this;
     };
     NewInstanceResolver = NewInstanceResolver_1 = __decorate([
-        resolver,
+        containerResolver,
         __metadata("design:paramtypes", [Function, Object])
     ], NewInstanceResolver);
     return NewInstanceResolver;
@@ -52355,7 +52337,7 @@ var OptionalResolver = /** @class */ (function () {
         return null;
     };
     OptionalResolver = OptionalResolver_1 = __decorate([
-        resolver,
+        containerResolver,
         __metadata("design:paramtypes", [Object, Object])
     ], OptionalResolver);
     return OptionalResolver;
@@ -52403,7 +52385,7 @@ var ParentResolver = /** @class */ (function () {
         return container.parent ? container.parent.get(this._key) : null;
     };
     ParentResolver = ParentResolver_1 = __decorate([
-        resolver,
+        containerResolver,
         __metadata("design:paramtypes", [Object])
     ], ParentResolver);
     return ParentResolver;
