@@ -11,9 +11,9 @@
 @{
     // var result = await Prerenderer.Render("prerender");
     var result = await Prerenderer.Render(
-        "prerenderer",
+        "ssr",
         customDataParameter: new {
-            template = "index.template.html"
+            template = "index.html"
         }
     );
 }

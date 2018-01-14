@@ -1,18 +1,19 @@
+import * as CopyWebpackPlugin from 'copy-webpack-plugin';
 import { cloneDeep } from 'lodash';
-import { join } from 'path';
+import { join, resolve } from 'path';
 import * as VueSSRClientPlugin from 'vue-server-renderer/client-plugin';
 import * as webpack from 'webpack';
 import * as merge from 'webpack-merge';
-import * as config from './webpack.config.base';
+import config from './build/config';
+import * as webpackConfig from './webpack.config.base';
 
-const server = merge(cloneDeep(config), {
+const server = merge(cloneDeep(webpackConfig), {
     target: 'node',
     entry: {
-        prerenderer: './client/entries/ssr-entry.ts',
+        ssr: './client/entries/ssr-entry.ts',
     },
     output: {
-        path: join(__dirname, 'server/'),
-        // publicPath: './server/',
+        path: join(__dirname, config.ssr.output),
         libraryTarget: 'commonjs2',
     },
     resolve: {
@@ -22,13 +23,13 @@ const server = merge(cloneDeep(config), {
     },
 } as webpack.Configuration);
 
-const client = merge(cloneDeep(config), {
+const client = merge(cloneDeep(webpackConfig), {
     target: 'web',
     entry: {
-        client: './client/entries/browser-entry.ts',
+        browser: './client/entries/browser-entry.ts',
     },
     output: {
-        path: join(__dirname, 'server/wwwroot/js/'),
+        path: join(__dirname, config.browser.output),
         publicPath: '/js/',
     },
     resolve: {
@@ -39,13 +40,35 @@ const client = merge(cloneDeep(config), {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
-            minChunks: module =>
-                module.context && module.context.includes('node_modules'),
+            minChunks(module) {
+                return (
+                    module.resource &&
+                    (/\.jsx?$/.test(module.resource) || /\.tsx?$/.test(module.resource)) &&
+                    module.resource.indexOf(join(__dirname, '../node_modules')) === 0
+                );
+            },
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest',
             minChunks: Infinity,
         }),
+        // // This instance extracts shared chunks from code splitted chunks and bundles them
+        // // in a separate chunk, similar to the vendor chunk
+        // // see: https://webpack.js.org/plugins/commons-chunk-plugin/#extra-async-commons-chunk
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: 'common',
+        //     async: 'vendor-async',
+        //     children: true,
+        //     minChunks: 3,
+        // }),
+        // // copy custom static assets
+        // new CopyWebpackPlugin([
+        //     {
+        //         from: resolve(__dirname, 'static'),
+        //         to: join(__dirname, config.browser.output, config.assetsSubDirectory),
+        //         ignore: ['.*'],
+        //     },
+        // ]),
         // This plugins generates `vue-ssr-client-manifest.json` in the
         // output directory.
         new VueSSRClientPlugin(),
